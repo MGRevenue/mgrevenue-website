@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MG Revenue — Increase Revenue</title>
+<meta name="description" content="MG Revenue helps companies increase revenue through sales and outsourcing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#080808;--panel:#0f0f10;--panel2:#121214;--line:#252526;--text:#f4f3ef;--muted:#a7a6a1;
+ --accent:#d4a65b;--accent2:#f0c981;--accent-dark:#8c652e;--max:1180px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(8,8,8,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;flex:none}.brand img{width:116px;height:62px;object-fit:contain;object-position:left center}
+.links{display:flex;align-items:center;gap:38px;margin-left:auto}.links a{font-size:14px;color:#bdbcb8;transition:.2s}.links a:hover{color:#fff}
+.nav-cta{padding:11px 18px;border:1px solid #3b3328;border-radius:999px;background:#15120e;color:#fff;font-weight:600;font-size:13px;white-space:nowrap}.nav-cta:hover{border-color:var(--accent);background:#1c170f}
+.menu{display:none;background:none;border:0;color:#fff;font-size:24px}
+.hero{padding:155px 0 108px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;width:700px;height:700px;right:-310px;top:20px;background:radial-gradient(circle,rgba(212,166,91,.12),transparent 68%);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#bdb5a9;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:26px}.eyebrow i{width:30px;height:1px;background:var(--accent);display:block}
+h1,h2,h3{font-family:Manrope,sans-serif;margin:0;letter-spacing:-.045em}h1{font-size:clamp(54px,8vw,94px);line-height:.98;max-width:920px}h1 span{color:var(--accent)}
+.hero-copy{max-width:700px;margin-top:27px;font-size:19px;color:#b4b2ad}.hero-copy strong{color:#fff;font-weight:600}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 21px;border-radius:9px;font-weight:700;font-size:14px;border:1px solid #353535}.btn-main{background:var(--accent);border-color:var(--accent);color:#0a0907}.btn-main:hover{background:var(--accent2)}.btn-ghost{background:#111;color:#eee}.btn-ghost:hover{border-color:#555}
+.hero-visual{position:absolute;right:0;top:155px;width:500px;height:480px;pointer-events:none}
+.v-frame{position:absolute;inset:22px;border:1px solid rgba(212,166,91,.18);border-radius:28px;transform:rotate(-4deg)}
+.v-frame.two{inset:58px;transform:rotate(4deg);border-color:rgba(255,255,255,.08)}
+.engine{position:absolute;width:210px;height:130px;border:1px solid #383128;background:linear-gradient(145deg,#17130d,#0d0d0e);border-radius:18px;padding:20px;box-shadow:0 24px 55px rgba(0,0,0,.4)}
+.engine small{color:var(--accent);font-size:10px;letter-spacing:.13em;font-weight:700}.engine b{display:block;font:700 24px Manrope;margin-top:10px}.engine p{margin:3px 0 0;color:#85847f;font-size:12px}
+.sales{left:15px;top:65px}.outsourcing{right:15px;bottom:75px}
+.revenue-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:120px;height:120px;border:1px solid rgba(212,166,91,.5);border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,rgba(212,166,91,.15),rgba(12,12,12,.92) 64%);box-shadow:0 0 80px rgba(212,166,91,.10)}
+.revenue-core b{font:800 15px Manrope;letter-spacing:.08em}.connector{position:absolute;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);transform-origin:left center;animation:pulse 3s ease-in-out infinite}.c1{width:160px;left:190px;top:155px;transform:rotate(10deg)}.c2{width:170px;left:300px;top:310px;transform:rotate(150deg)}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+section{padding:105px 0}.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:45px}.section-head h2{font-size:clamp(36px,5vw,62px);max-width:700px}.section-head p{max-width:410px;color:var(--muted);margin:0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.feature{border:1px solid var(--line);border-radius:20px;padding:34px;background:linear-gradient(145deg,#111112,#0b0b0c);min-height:390px;position:relative;overflow:hidden}.feature:after{content:"";position:absolute;width:260px;height:260px;right:-110px;bottom:-130px;background:radial-gradient(circle,rgba(212,166,91,.13),transparent 70%)}.feature .tag{color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.12em}.feature h3{font-size:35px;margin:15px 0 12px}.feature p{color:#999894;max-width:500px}.feature ul{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}.feature li{color:#d2d1cd;font-size:13px}.feature li:before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin:0 9px 2px 0}
+.process{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden}.step{padding:27px;border-right:1px solid var(--line)}.step:last-child{border:0}.step-num{color:var(--accent);font:700 12px Manrope}.step h3{font-size:19px;margin:12px 0 7px}.step p{color:#85847f;font-size:13px;margin:0}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.role{border:1px solid var(--line);border-radius:16px;padding:25px;background:#0e0e0f}.role b{font:700 17px Manrope}.role div{color:#7f7e79;font-size:13px;margin-top:8px;line-height:1.8}
+.partner{border:1px solid #302a21;border-radius:22px;padding:52px;background:linear-gradient(120deg,#14110c,#0c0c0d);display:grid;grid-template-columns:1.2fr .8fr;gap:60px;position:relative;overflow:hidden}.partner:after{content:"";position:absolute;width:420px;height:420px;right:-170px;top:-180px;border-radius:50%;border:1px solid rgba(212,166,91,.15)}.partner h2{font-size:48px}.partner p{color:#aaa79f;max-width:600px}.share{font:800 52px Manrope;color:var(--accent);letter-spacing:-.06em}.share small{display:block;color:#77746e;font:500 12px "DM Sans";letter-spacing:.08em;text-transform:uppercase}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.about-grid h2{font-size:48px}.about-grid p{color:#aaa9a4}.about-box{border-left:1px solid #38332b;padding-left:35px}.about-box strong{font:700 20px Manrope}.about-box p{font-size:14px}
+.cta{padding:110px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;background:radial-gradient(circle at center,rgba(212,166,91,.08),transparent 45%)}.cta h2{font-size:clamp(44px,7vw,78px)}.cta p{color:#92908a;margin:18px auto 30px;max-width:560px}
+footer{padding:32px 0}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;color:#6f6e6a;font-size:12px}.foot-brand{display:flex;align-items:center;gap:14px}.foot-brand img{width:76px;height:42px;object-fit:contain}
+@media(max-width:950px){.links{gap:22px}.hero-visual{opacity:.28;right:-140px}.hero{padding-top:150px}.process{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--line)}.partner{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:35px}}
+@media(max-width:720px){.wrap{width:min(var(--max),calc(100% - 32px))}.links,.nav-cta{display:none}.menu{display:block}.brand img{width:98px;height:56px}.hero{padding:135px 0 85px}.hero-visual{position:relative;top:auto;right:auto;width:100%;height:280px;opacity:.72;margin-top:45px}.hero-copy{font-size:17px}.two-col,.roles{grid-template-columns:1fr}.feature{min-height:auto}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)!important}.step:last-child{border-bottom:0!important}.section-head{display:block}.section-head p{margin-top:18px}.partner{padding:32px}.partner h2,.about-grid h2{font-size:38px}.share{font-size:45px}.foot{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#top" aria-label="MG Revenue home"><img src="mg-revenue-logo.png" alt="MG Revenue"></a>
+<nav class="links">
+<a href="#sales">Sales</a><a href="#outsourcing">Outsourcing</a><a href="#partner">Become a Partner</a><a href="#about">About</a>
+</nav>
+<a class="nav-cta" href="mailto:contact@mgrevenue.com">Let's Talk</a>
+<button class="menu" aria-label="Open menu">☰</button>
+</div></header>
+
+<main id="top">
+<section class="hero">
+<div class="wrap">
+
+<h1>We are focused on <span>increasing revenue.</span></h1>
+<p class="hero-copy">We do it in two ways: <strong>Sales</strong> to create more qualified opportunities, and <strong>Outsourcing</strong> to help companies build the teams they need to grow.</p>
+<div class="hero-actions"><a class="btn btn-main" href="#sales">Explore Sales</a><a class="btn btn-ghost" href="#outsourcing">Explore Outsourcing</a></div>
+</div>
+<div class="hero-visual" aria-hidden="true">
+<div class="v-frame"></div><div class="v-frame two"></div>
+<div class="engine sales"><small>GROWTH ENGINE 01</small><b>Sales</b><p>More qualified conversations.</p></div>
+<div class="engine outsourcing"><small>GROWTH ENGINE 02</small><b>Outsourcing</b><p>More capacity to execute.</p></div>
+<div class="connector c1"></div><div class="connector c2"></div>
+<div class="revenue-core"><b>REVENUE</b></div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-head"><h2>Two ways to move the business forward.</h2><p>Sales and outsourcing, built around what your business needs.</p></div>
+<div class="two-col">
+<article class="feature" id="sales"><span class="tag">SALES</span><h3>Create more opportunities.</h3><p>Build a consistent outbound motion around your ideal customers and turn targeted outreach into qualified sales conversations.</p><ul><li>Cold calling</li><li>Email outreach</li><li>LinkedIn outreach</li><li>Appointment setting</li><li>Lead generation</li><li>SDR / BDR support</li></ul></article>
+<article class="feature" id="outsourcing"><span class="tag">OUTSOURCING</span><h3>Build the team to execute.</h3><p>Extend your team with skilled, English-speaking talent from Kosovo — without building every function in-house.</p><ul><li>SDR / BDR</li><li>Virtual Assistant</li><li>Personal Assistant</li><li>Bookkeeper</li><li>Accountant</li><li>Data Entry</li></ul></article>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-head"><h2>A simple system. Built around your growth.</h2><p>We keep the process clear, measurable, and focused on the work that creates business value.</p></div>
+<div class="process">
+<div class="step"><span class="step-num">01</span><h3>Define</h3><p>Clarify the target, role, goals and success criteria.</p></div>
+<div class="step"><span class="step-num">02</span><h3>Build</h3><p>Build the right outreach or talent solution.</p></div>
+<div class="step"><span class="step-num">03</span><h3>Execute</h3><p>Run the work consistently with your team.</p></div>
+<div class="step"><span class="step-num">04</span><h3>Grow</h3><p>Improve what works and create more capacity.</p></div>
+</div>
+</div>
+</section>
+
+<section id="outsourcing-services">
+<div class="wrap">
+<div class="section-head"><h2>Talent for the work behind growth.</h2><p>Our outsourcing model is designed as a team extension — practical, flexible and built around the role you actually need.</p></div>
+<div class="roles">
+<div class="role"><b>Sales</b><div>SDR  |  BDR  |  Account Executive</div></div>
+<div class="role"><b>Operations</b><div>Virtual Assistant  |  Personal Assistant  |  Data Entry</div></div>
+<div class="role"><b>Finance</b><div>Bookkeeper  |  Accountant</div></div>
+</div>
+</div>
+</section>
+
+<section id="partner">
+<div class="wrap">
+<div class="partner">
+<div><span class="tag" style="color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.12em">BECOME A PARTNER</span><h2>Help your clients grow. Create another revenue stream.</h2><p>We work with Fractional CFOs, Fractional COOs, consultants, advisors and other professionals who serve growing companies.</p><p>Introduce a client that needs sales or outsourcing support. We take it from there.</p><a class="btn btn-main" href="mailto:contact@mgrevenue.com?subject=MG Revenue Partnership">Become a Partner</a></div>
+<div><div class="share">10%<small>lifetime revenue share on qualifying outsourcing introductions</small></div><div style="margin-top:38px;color:#888;font-size:13px;line-height:2">Introduce  |  We connect  |  Client gets support  |  You earn</div></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="wrap about-grid">
+<div><span class="tag" style="color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.12em">ABOUT MG REVENUE</span><h2>Built around one goal: increasing revenue.</h2></div>
+<div class="about-box"><strong>Sales and outsourcing.</strong><p>MG Revenue is a Kosovo-based revenue and outsourcing company helping businesses create more opportunities and build the capacity to execute.</p><p>Kosovo gives us access to a young, highly capable, English-speaking workforce. We use that talent to help companies extend their teams while keeping quality and communication at the center.</p><p>Our approach is straightforward: understand what the business needs, build the right solution, and execute with consistency.</p></div>
+</div>
+</section>
+
+<section class="cta"><div class="wrap"><h2>Ready to increase revenue?</h2><p>Tell us where you need help — sales, outsourcing, or both.</p><a class="btn btn-main" href="mailto:contact@mgrevenue.com">contact@mgrevenue.com</a></div></section>
+</main>
+
+<footer><div class="wrap foot"><div class="foot-brand"><img src="mg-revenue-logo.png" alt="MG Revenue"><span>© 2026 MG Revenue SH.P.K.</span></div><span>Sales  |  Outsourcing  |  Partnerships</span></div></footer>
+
+<script>
+const menu=document.querySelector('.menu'), nav=document.querySelector('.links');
+menu?.addEventListener('click',()=>{nav.style.display=nav.style.display==='flex'?'none':'flex';nav.style.position='absolute';nav.style.top='86px';nav.style.left='16px';nav.style.right='16px';nav.style.padding='20px';nav.style.flexDirection='column';nav.style.background='#0d0d0e';nav.style.border='1px solid #28282a';nav.style.borderRadius='14px';});
+</script>
+</body>
+</html>
