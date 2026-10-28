@@ -2,136 +2,734 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MG Revenue — Increase Revenue</title>
-<meta name="description" content="MG Revenue helps companies increase revenue through sales and outsourcing.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MG Revenue — Sales and outsourcing from Kosovo</title>
+<meta name="description" content="MG Revenue grows revenue two ways: outbound sales that books qualified conversations, and English-speaking talent from Kosovo that extends your team. Partners earn a 10% lifetime revenue share.">
+<meta name="theme-color" content="#080808">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://mgrevenue.com/">
+<link rel="icon" type="image/png" href="mg-revenue-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mgrevenue.com/">
+<meta property="og:title" content="MG Revenue — More revenue, built in Kosovo">
+<meta property="og:description" content="Outbound sales that books qualified conversations, and English-speaking talent from Kosovo that extends your team.">
+<meta property="og:image" content="https://mgrevenue.com/assets/img/library-1100.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>if('IntersectionObserver' in window)document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=zodiak@100,300,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/domes-poster.jpg">
 <style>
+/* ── Tokens ─────────────────────────────────────────────── */
 :root{
- --bg:#080808;--panel:#0f0f10;--panel2:#121214;--line:#252526;--text:#f4f3ef;--muted:#a7a6a1;
- --accent:#d4a65b;--accent2:#f0c981;--accent-dark:#8c652e;--max:1180px;
+  --bg:#080808; --panel:#0f0f10; --panel2:#121214; --line:#252526;
+  --ink:#f4f3ef; --muted:#a7a6a1;
+  --accent:#d4a65b; --accent2:#f0c981; --accent-dark:#8c652e;
+
+  --display:"Zodiak","Iowan Old Style","Times New Roman",Georgia,serif;
+  --text:"Hanken Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+
+  --step-small:.875rem;
+  --step-body:clamp(1.0625rem,1rem + .3vw,1.25rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2rem,.9rem + 3.4vw,4rem);
+  --step-display:clamp(1.875rem,8.1vw,9.5rem);
+
+  --m:clamp(20px,3.4vw,48px);
+  --gap:clamp(16px,2vw,28px);
+  --bar-h:72px;
+  --section:clamp(104px,13vw,208px);
+
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-expo:cubic-bezier(.16,1,.3,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+  --ease-drawer:cubic-bezier(.32,.72,0,1);
+  --t-press:160ms; --t-hover:200ms;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.5}
-a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
-header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(8,8,8,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
-.nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.brand{display:flex;align-items:center;flex:none}.brand img{width:116px;height:62px;object-fit:contain;object-position:left center}
-.links{display:flex;align-items:center;gap:38px;margin-left:auto}.links a{font-size:14px;color:#bdbcb8;transition:.2s}.links a:hover{color:#fff}
-.nav-cta{padding:11px 18px;border:1px solid #3b3328;border-radius:999px;background:#15120e;color:#fff;font-weight:600;font-size:13px;white-space:nowrap}.nav-cta:hover{border-color:var(--accent);background:#1c170f}
-.menu{display:none;background:none;border:0;color:#fff;font-size:24px}
-.hero{padding:155px 0 108px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero:before{content:"";position:absolute;width:700px;height:700px;right:-310px;top:20px;background:radial-gradient(circle,rgba(212,166,91,.12),transparent 68%);pointer-events:none}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#bdb5a9;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:26px}.eyebrow i{width:30px;height:1px;background:var(--accent);display:block}
-h1,h2,h3{font-family:Manrope,sans-serif;margin:0;letter-spacing:-.045em}h1{font-size:clamp(54px,8vw,94px);line-height:.98;max-width:920px}h1 span{color:var(--accent)}
-.hero-copy{max-width:700px;margin-top:27px;font-size:19px;color:#b4b2ad}.hero-copy strong{color:#fff;font-weight:600}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 21px;border-radius:9px;font-weight:700;font-size:14px;border:1px solid #353535}.btn-main{background:var(--accent);border-color:var(--accent);color:#0a0907}.btn-main:hover{background:var(--accent2)}.btn-ghost{background:#111;color:#eee}.btn-ghost:hover{border-color:#555}
-.hero-visual{position:absolute;right:0;top:155px;width:500px;height:480px;pointer-events:none}
-.v-frame{position:absolute;inset:22px;border:1px solid rgba(212,166,91,.18);border-radius:28px;transform:rotate(-4deg)}
-.v-frame.two{inset:58px;transform:rotate(4deg);border-color:rgba(255,255,255,.08)}
-.engine{position:absolute;width:210px;height:130px;border:1px solid #383128;background:linear-gradient(145deg,#17130d,#0d0d0e);border-radius:18px;padding:20px;box-shadow:0 24px 55px rgba(0,0,0,.4)}
-.engine small{color:var(--accent);font-size:10px;letter-spacing:.13em;font-weight:700}.engine b{display:block;font:700 24px Manrope;margin-top:10px}.engine p{margin:3px 0 0;color:#85847f;font-size:12px}
-.sales{left:15px;top:65px}.outsourcing{right:15px;bottom:75px}
-.revenue-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:120px;height:120px;border:1px solid rgba(212,166,91,.5);border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,rgba(212,166,91,.15),rgba(12,12,12,.92) 64%);box-shadow:0 0 80px rgba(212,166,91,.10)}
-.revenue-core b{font:800 15px Manrope;letter-spacing:.08em}.connector{position:absolute;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);transform-origin:left center;animation:pulse 3s ease-in-out infinite}.c1{width:160px;left:190px;top:155px;transform:rotate(10deg)}.c2{width:170px;left:300px;top:310px;transform:rotate(150deg)}
-@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
-section{padding:105px 0}.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:45px}.section-head h2{font-size:clamp(36px,5vw,62px);max-width:700px}.section-head p{max-width:410px;color:var(--muted);margin:0}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.feature{border:1px solid var(--line);border-radius:20px;padding:34px;background:linear-gradient(145deg,#111112,#0b0b0c);min-height:390px;position:relative;overflow:hidden}.feature:after{content:"";position:absolute;width:260px;height:260px;right:-110px;bottom:-130px;background:radial-gradient(circle,rgba(212,166,91,.13),transparent 70%)}.feature .tag{color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.12em}.feature h3{font-size:35px;margin:15px 0 12px}.feature p{color:#999894;max-width:500px}.feature ul{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}.feature li{color:#d2d1cd;font-size:13px}.feature li:before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin:0 9px 2px 0}
-.process{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden}.step{padding:27px;border-right:1px solid var(--line)}.step:last-child{border:0}.step-num{color:var(--accent);font:700 12px Manrope}.step h3{font-size:19px;margin:12px 0 7px}.step p{color:#85847f;font-size:13px;margin:0}
-.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.role{border:1px solid var(--line);border-radius:16px;padding:25px;background:#0e0e0f}.role b{font:700 17px Manrope}.role div{color:#7f7e79;font-size:13px;margin-top:8px;line-height:1.8}
-.partner{border:1px solid #302a21;border-radius:22px;padding:52px;background:linear-gradient(120deg,#14110c,#0c0c0d);display:grid;grid-template-columns:1.2fr .8fr;gap:60px;position:relative;overflow:hidden}.partner:after{content:"";position:absolute;width:420px;height:420px;right:-170px;top:-180px;border-radius:50%;border:1px solid rgba(212,166,91,.15)}.partner h2{font-size:48px}.partner p{color:#aaa79f;max-width:600px}.share{font:800 52px Manrope;color:var(--accent);letter-spacing:-.06em}.share small{display:block;color:#77746e;font:500 12px "DM Sans";letter-spacing:.08em;text-transform:uppercase}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.about-grid h2{font-size:48px}.about-grid p{color:#aaa9a4}.about-box{border-left:1px solid #38332b;padding-left:35px}.about-box strong{font:700 20px Manrope}.about-box p{font-size:14px}
-.cta{padding:110px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;background:radial-gradient(circle at center,rgba(212,166,91,.08),transparent 45%)}.cta h2{font-size:clamp(44px,7vw,78px)}.cta p{color:#92908a;margin:18px auto 30px;max-width:560px}
-footer{padding:32px 0}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;color:#6f6e6a;font-size:12px}.foot-brand{display:flex;align-items:center;gap:14px}.foot-brand img{width:76px;height:42px;object-fit:contain}
-@media(max-width:950px){.links{gap:22px}.hero-visual{opacity:.28;right:-140px}.hero{padding-top:150px}.process{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--line)}.partner{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:35px}}
-@media(max-width:720px){.wrap{width:min(var(--max),calc(100% - 32px))}.links,.nav-cta{display:none}.menu{display:block}.brand img{width:98px;height:56px}.hero{padding:135px 0 85px}.hero-visual{position:relative;top:auto;right:auto;width:100%;height:280px;opacity:.72;margin-top:45px}.hero-copy{font-size:17px}.two-col,.roles{grid-template-columns:1fr}.feature{min-height:auto}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)!important}.step:last-child{border-bottom:0!important}.section-head{display:block}.section-head p{margin-top:18px}.partner{padding:32px}.partner h2,.about-grid h2{font-size:38px}.share{font-size:45px}.foot{align-items:flex-start;flex-direction:column}}
+@media (max-width:860px){:root{--bar-h:64px}}
+
+/* ── Base ───────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:var(--bar-h);scrollbar-color:var(--accent-dark) var(--bg);background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.55 var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;caret-color:var(--accent);overflow-x:hidden;overflow-x:clip}
+img,video,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3,p,figure,ol,ul,dl,dd,fieldset{margin:0}
+ol,ul{padding:0;list-style:none}
+strong{font-weight:600}
+p{text-wrap:pretty}
+::selection{background:var(--accent);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0} /* taste-skill-ignore */
+.ico{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square}
+.skip{position:fixed;left:var(--m);top:10px;z-index:100;padding:12px 18px;background:var(--accent);color:var(--bg);font-weight:600;text-decoration:none;transform:translateY(-160%);transition:transform 200ms var(--ease-out)}
+.skip:focus{transform:none}
+
+.wrap{width:100%;max-width:1760px;margin-inline:auto;padding-inline:var(--m)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
+.chapter{padding-block:var(--section)}
+.head{font-family:var(--display);font-weight:300;font-size:var(--step-head);line-height:1;letter-spacing:-.015em;text-wrap:balance}
+.lead{font-size:var(--step-lead);line-height:1.38}
+.muted{color:var(--muted)}
+
+/* ── Controls ───────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.65em;min-height:52px;padding:0 1.4em;border:0;border-radius:0;font:600 1rem/1 var(--text);letter-spacing:.005em;text-decoration:none;white-space:nowrap;cursor:pointer;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease,color var(--t-hover) ease}
+.btn:active{transform:scale(.97)}
+.btn--gold{background:var(--accent);color:var(--bg)}
+.btn--ink{background:var(--bg);color:var(--accent)}
+.link{display:inline-flex;align-items:center;gap:.5em;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.28em;transition:text-underline-offset var(--t-hover) var(--ease-out),color var(--t-hover) ease}
+.link .ico{transition:transform var(--t-hover) var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .btn--gold:hover{background:var(--accent2)}
+  .btn--ink:hover{color:var(--accent2);background:var(--panel2)}
+  .link:hover{text-underline-offset:.4em}
+  .link:hover .ico{transform:translateX(3px)}
+}
+
+/* ── Bar: takes the colour of the chapter beneath it ────── */
+.bar{position:fixed;inset:0 0 auto;z-index:50;height:var(--bar-h);background:var(--bg);color:var(--ink);transition:background-color 300ms ease,color 300ms ease}
+.bar[data-tone=panel]{background:var(--panel)}
+.bar[data-tone=gold]{background:var(--accent);color:var(--bg)}
+.bar[data-tone=light]{background:var(--ink);color:var(--bg)}
+.bar__in{height:100%;display:flex;align-items:center;gap:clamp(16px,2.6vw,44px)}
+.bar__brand{display:block;flex:none;margin-right:auto}
+.bar__brand img{height:calc(var(--bar-h) - 22px);width:auto;transition:filter 300ms ease}
+.bar[data-tone=gold] .bar__brand img,.bar[data-tone=light] .bar__brand img{filter:brightness(0)}
+.bar__nav{display:flex;gap:clamp(20px,2.4vw,40px)}
+.bar__nav a{font-size:1rem;font-weight:500;text-decoration:none;padding-block:10px;text-decoration-line:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:.5em;transition:text-decoration-color var(--t-hover) ease,text-underline-offset var(--t-hover) var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.bar__nav a:hover{text-decoration-color:currentColor;text-underline-offset:.35em}}
+.bar .btn{min-height:44px;padding-inline:1.15em;font-size:1rem;transition:transform var(--t-press) var(--ease-out),background-color 300ms ease,color 300ms ease}
+.bar[data-tone=gold] .btn,.bar[data-tone=light] .btn{background:var(--bg);color:var(--accent)}
+.bar__menu{display:none;min-height:44px;padding:0 4px;background:none;border:0;color:inherit;font:500 1rem/1 var(--text);cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.35em;transition:transform var(--t-press) var(--ease-out)}
+.bar__menu:active{transform:scale(.97)}
+@media (max-width:860px){.bar__nav{display:none}.bar__menu{display:inline-flex;align-items:center}}
+
+/* Menu sheet (phones and small tablets) */
+.sheet{position:fixed;inset:0;width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:0;border:0;background:var(--bg);color:var(--ink);overflow-y:auto;opacity:1;transform:none;transition:opacity 260ms var(--ease-out),transform 340ms var(--ease-drawer)}
+.sheet::backdrop{background:transparent}
+@starting-style{.sheet[open]{opacity:0;transform:translateY(-14px)}}
+.sheet.is-closing{opacity:0;transform:translateY(-8px);transition-duration:180ms}
+.sheet__top{height:var(--bar-h);display:flex;align-items:center;justify-content:space-between}
+.sheet__top img{height:calc(var(--bar-h) - 22px);width:auto}
+.sheet__nav{padding-block:clamp(32px,8vh,72px) 40px}
+.sheet__nav a{display:block;padding-block:.12em;font-family:var(--display);font-weight:300;font-size:clamp(2.5rem,11vw,4rem);line-height:1.1;letter-spacing:-.015em;text-decoration:none}
+.sheet__mail{display:grid;gap:14px;padding-bottom:40px}
+
+/* ── Hero: a black field over a rising gold field ─────────
+   One headline crosses the seam. Its ink is set with mix-blend-mode: difference,
+   so #dcae63 renders as exactly #d4a65b over black and exactly #080808 over gold.
+   The gold block must stay non-positioned and free of transform/opacity so the
+   headline can blend with its background. */
+.hero{position:relative;background:var(--bg);overflow:hidden;overflow:clip}
+.hero__top{min-height:54vh;min-height:54svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:calc(var(--bar-h) + 32px)}
+.seam{font-family:var(--display);font-weight:300;font-size:var(--step-display);line-height:.95;letter-spacing:-.01em;text-transform:uppercase;margin:0 0 -.62em;color:#dcae63}
+@media (min-width:1200px){.seam{font-weight:100}}
+.seam .l2{white-space:nowrap}
+.seam .ink{mix-blend-mode:difference}
+.slot{display:inline-block;position:relative;width:2em;height:.86em;margin:0 .02em;vertical-align:-.08em;overflow:hidden;background:var(--panel2)}
+.slot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero__gold{background:var(--accent);color:var(--bg);padding-top:calc(var(--step-display) * .62 + clamp(36px,4.4vw,64px))}
+.hero__lead{display:flex;flex-wrap:wrap;align-items:flex-end;gap:28px clamp(32px,5vw,72px);padding-bottom:clamp(64px,8vw,112px)}
+.hero__lead p{font-size:var(--step-lead);line-height:1.34;max-width:36ch}
+.hero__gold ::selection,.partners ::selection{background:var(--bg);color:var(--accent)}
+.hero__gold :focus-visible,.partners :focus-visible{outline-color:var(--bg)}
+
+.doors{padding-bottom:clamp(72px,9vw,128px)}
+.doors__grid{row-gap:40px}
+.door-group{grid-column:1/span 6;display:grid;gap:10px;align-content:start}
+.door-group + .door-group{grid-column:8/-1}
+.door{display:block;justify-self:start;text-wrap:balance;padding-block:6px;font-family:var(--display);font-weight:400;font-size:var(--step-lead);line-height:1.3;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:transparent;text-underline-offset:.3em;transition:transform var(--t-press) var(--ease-out),text-decoration-color var(--t-hover) ease}
+.door .ico{display:inline-block;margin-left:.45em;vertical-align:-.04em;width:.8em;height:.8em;transition:transform var(--t-hover) var(--ease-out)}
+.door:active{transform:scale(.985)}
+@media (hover:hover) and (pointer:fine){.door:hover{text-decoration-color:currentColor}.door:hover .ico{transform:translateX(4px)}}
+
+/* ── Sales: object in front of type ─────────────────────── */
+.sales{overflow:hidden;overflow:clip}
+.sales__grid{row-gap:clamp(48px,5vw,80px);align-items:start}
+.stack{grid-column:1/span 7;grid-row:1;font-family:var(--display);font-weight:300;font-size:var(--step-display);line-height:.9;letter-spacing:-.025em}
+.stack__l{display:block;color:var(--muted);white-space:nowrap}
+.stack h2{font:inherit;color:var(--ink)}
+.seq{grid-column:7/-1;grid-row:1;justify-self:end;width:min(100%,560px);margin-top:clamp(8px,2.4vw,40px);padding-bottom:8px;background:var(--panel2);font-size:1rem;line-height:1.4}
+.seq__head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px 6px}
+.seq__title{font-weight:600}
+.seq__tag{color:var(--muted);font-size:var(--step-small)}
+.seq__who{padding:0 22px 16px;color:var(--muted);font-size:var(--step-small)}
+.seq__rows{display:grid;gap:2px;padding-inline:10px}
+.seq__rows li{display:grid;grid-template-columns:3.2em 1fr auto;gap:12px;align-items:baseline;padding:12px 12px;background:var(--panel)}
+.seq__day{color:var(--muted);font-variant-numeric:tabular-nums}
+.seq__st{color:var(--muted);text-align:right}
+.seq__rows .is-won{background:var(--accent);color:var(--bg)}
+.seq__rows .is-won span{color:var(--bg)}
+.seq__rows .is-won .seq__ch{font-weight:600}
+.seq figcaption{padding:14px 22px 10px;color:var(--muted);font-size:var(--step-small)}
+.sales__facts{grid-column:8/-1;grid-row:2;max-width:36em}
+.sales__facts .lead strong{color:var(--ink)}
+.channels{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin-top:32px}
+.channels li{display:flex;gap:12px;align-items:baseline}
+.channels li::before{content:"";flex:none;width:.42em;height:.42em;background:var(--accent);transform:translateY(-.08em)}
+
+/* ── Outsourcing: statement, table pushed right ─────────── */
+.talent{background:var(--panel)}
+.talent__grid{margin-top:clamp(56px,7vw,104px);row-gap:clamp(48px,5vw,72px);align-items:start}
+.talent__side{grid-column:1/span 5;display:grid;gap:clamp(40px,4vw,64px)}
+.talent__intro{display:grid;gap:1em;max-width:34em}
+.talent__name{grid-column:7;font-size:var(--step-small);color:var(--muted);padding-top:.2em}
+.roles{grid-column:8/-1;width:100%;border-collapse:collapse;font-size:1rem}
+.roles td,.roles th{padding:14px 0;text-align:left;vertical-align:baseline;font-weight:400}
+.roles th{font-weight:500;color:var(--ink);padding-right:16px}
+.roles .dept{color:var(--muted);width:32%;padding-right:16px}
+.roles .focus{color:var(--muted);text-align:right}
+.roles tr.g td,.roles tr.g th{padding-top:44px}
+.roles tbody tr:first-child td,.roles tbody tr:first-child th{padding-top:0}
+.talent__pic img{width:100%;aspect-ratio:3/2;object-fit:cover}
+figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
+
+/* ── Process: lines that step across ────────────────────── */
+.steps{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:clamp(44px,4.4vw,64px)}
+.step{grid-column-end:-1}
+.step:nth-child(1){grid-column-start:1}
+.step:nth-child(2){grid-column-start:3}
+.step:nth-child(3){grid-column-start:5}
+.step:nth-child(4){grid-column-start:7}
+.step .head{text-wrap:balance}
+.step:last-child .head{color:var(--accent)}
+.step p{margin-top:14px;max-width:34ch;color:var(--muted)}
+
+/* ── Partners: the gold chapter ─────────────────────────── */
+.partners{background:var(--accent);color:var(--bg)}
+.partners__grid{row-gap:64px;align-items:start}
+.partners__copy{grid-column:1/span 6;display:grid;gap:1.1em;max-width:34em}
+.partners__copy .head{margin-bottom:.35em}
+.partners__copy .head span{font-weight:400}
+.flow{display:flex;flex-wrap:wrap;gap:10px 14px;margin-block:.4em .8em;font-weight:600;font-size:1rem}
+.flow li{display:inline-flex;align-items:center;gap:14px}
+.flow li:not(:last-child)::after{content:"";width:22px;height:2px;background:currentColor;opacity:.55}
+.partners__copy .btn{justify-self:start}
+.est{grid-column:8/-1;display:grid;gap:22px}
+.est__q{font-size:var(--step-lead);line-height:1.35;max-width:22ch}
+.est__q output{font-weight:600;font-variant-numeric:tabular-nums}
+.est__ctrl{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center}
+.range{flex:1 1 220px;-webkit-appearance:none;appearance:none;height:44px;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
+.range::-webkit-slider-runnable-track{height:4px;background:rgba(8,8,8,.28)}
+.range::-moz-range-track{height:4px;background:rgba(8,8,8,.28)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-11px;background:var(--bg);border:0;transition:transform var(--t-press) var(--ease-out)}
+.range::-moz-range-thumb{width:26px;height:26px;background:var(--bg);border:0;border-radius:0;transition:transform var(--t-press) var(--ease-out)}
+.range:active::-webkit-slider-thumb{transform:scale(1.12)}
+.range:active::-moz-range-thumb{transform:scale(1.12)}
+.range:focus-visible{outline:2px solid var(--bg);outline-offset:4px}
+.seg{display:inline-flex;padding:0;border:0;min-inline-size:0}
+.seg label{position:relative;cursor:pointer}
+.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.seg span{display:block;min-width:52px;padding:11px 12px;text-align:center;font-size:.875rem;font-weight:600;border:1.5px solid var(--bg);margin-left:-1.5px;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease,color var(--t-hover) ease} /* taste-skill-ignore: form control */
+.seg input:checked + span{background:var(--bg);color:var(--accent)}
+.seg label:active span{transform:translateY(1px) scale(.97)}
+.seg input:focus-visible + span{outline:2px solid var(--bg);outline-offset:3px}
+.ledger{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.15fr);column-gap:0;row-gap:18px;margin-top:8px}
+.ledger li{display:grid;grid-column:1/-1;grid-template-columns:subgrid;align-items:baseline}
+.ledger li[hidden]{display:none}
+.fig{grid-column:1;justify-self:end;font-family:var(--display);font-weight:300;font-size:clamp(3.25rem,6.6vw,6.75rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums}
+.fig-u{grid-column:2;font-family:var(--display);font-weight:300;font-size:clamp(3.25rem,6.6vw,6.75rem);line-height:1;letter-spacing:-.02em}
+.fig-c{grid-column:3;padding-left:clamp(16px,1.8vw,28px);font-size:1rem;line-height:1.38;max-width:calc(24ch + 28px)}
+
+/* ── About ─────────────────────────────────────────────── */
+.about__grid{align-items:start}
+.facts{grid-column:1/span 2;display:grid;gap:14px;padding-top:.5em;font-size:var(--step-small);color:var(--muted)}
+.facts a{text-decoration-thickness:1px;text-underline-offset:.25em;overflow-wrap:anywhere}
+.about__text{grid-column:3/span 6;max-width:33em}
+.about__pic{grid-column:10/-1;padding-top:.5em}
+.about__pic img{width:100%;aspect-ratio:1;object-fit:cover}
+#about{padding-bottom:clamp(40px,5vw,72px)}
+.about__text .head{margin-bottom:clamp(36px,4vw,64px)}
+.about__p{font-size:var(--step-lead);line-height:1.34}
+.about__p + .about__p{margin-top:1.1em;color:var(--muted)}
+.band{margin-top:var(--section)}
+.band__frame{overflow:hidden;aspect-ratio:21/9;background:var(--panel)}
+.band__frame img{width:100%;height:100%;object-fit:cover}
+.band figcaption{margin-top:14px}
+
+/* ── Close: invitation over the cropped name ────────────── */
+.close{position:relative;overflow:hidden;background:var(--ink);color:var(--bg);padding-top:var(--section);min-height:100svh;display:flex;flex-direction:column;caret-color:var(--bg)}
+.close ::selection{background:var(--bg);color:var(--ink)}
+.close :focus-visible{outline-color:var(--bg)}
+.close__grid{row-gap:48px;align-items:start}
+.close__invite{grid-column:1/span 7;display:grid;gap:22px;justify-items:start}
+.close__invite p{max-width:30ch}
+.close__pic{grid-column:8/span 2}
+.close__pic img{width:100%;aspect-ratio:1;object-fit:cover}
+.close__pic figcaption{margin-top:10px;font-size:var(--step-small)}
+.close__links{grid-column:10/-1;display:grid;gap:14px;align-content:start}
+.close__links h2{font:500 var(--step-body)/1.35 var(--text)}
+.close__links a{overflow-wrap:anywhere}
+.close__links .note{font-size:var(--step-small)}
+.close__nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:10px;font-size:var(--step-small)}
+.close__nav a{text-underline-offset:.25em;text-decoration-thickness:1px}
+.close__legal{margin-top:auto;padding-top:clamp(72px,8vw,120px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;font-size:var(--step-small);line-height:1.55}
+.close__legal p{max-width:72ch}
+.close__legal a{text-underline-offset:.2em;text-decoration-thickness:1px}
+.close__mark{font-family:var(--display);font-weight:300;font-size:calc((min(100vw,1760px) - 2 * var(--m)) / 6.95);line-height:.78;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap;margin:clamp(28px,4vw,56px) auto 0;padding:0 var(--m) calc(var(--m) * .6);width:100%;max-width:1760px;user-select:none}
+
+/* ── Motion ────────────────────────────────────────────── */
+@media (prefers-reduced-motion:no-preference){
+  html.js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity 700ms var(--ease-out) calc(var(--i,0) * 80ms),transform 900ms var(--ease-expo) calc(var(--i,0) * 80ms)}
+  html.js [data-reveal].is-in{opacity:1;transform:none}
+  html.js .seq[data-reveal]{transform:translateY(32px) rotate(-3deg)}
+  html.js .seq[data-reveal].is-in{transform:none}
+  html.js .band__frame[data-reveal]{opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path 1100ms var(--ease-in-out)}
+  html.js .band__frame[data-reveal] img{transform:scale(1.1);transition:transform 1600ms var(--ease-expo)}
+  html.js .band__frame[data-reveal].is-in{clip-path:inset(0)}
+  html.js .band__frame[data-reveal].is-in img{transform:none}
+
+  /* The gold field rises: an inset band of black retracts upward, and the
+     headline's ink flips from gold to black as the field passes behind it. */
+  .hero__gold{animation:rise 1300ms var(--ease-expo) 150ms backwards}
+  .seam .slot{animation:open 900ms var(--ease-in-out) 450ms backwards}
+  [data-load]{animation:load 700ms var(--ease-out) backwards;animation-delay:var(--d,0ms)}
+}
+@keyframes rise{from{box-shadow:inset 0 30vh 0 0 var(--bg)}to{box-shadow:inset 0 0 0 0 var(--bg)}} /* taste-skill-ignore: load-only curtain, never at rest */
+@keyframes open{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
+@keyframes load{from{opacity:0;transform:translateY(14px)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sheet{transition:none}}
+
+/* ── Laptop ────────────────────────────────────────────── */
+@media (max-width:1280px){
+  .partners__copy{grid-column:1/-1;max-width:40em}
+  .est{grid-column:1/-1;max-width:44em}
+}
+
+/* ── Tablet ────────────────────────────────────────────── */
+@media (max-width:1100px){
+  .stack{grid-column:1/-1}
+  .seq{grid-column:1/-1;grid-row:2;justify-self:end;margin-top:0}
+  .sales__facts{grid-column:1/-1;grid-row:3}
+  .talent__side{grid-column:1/-1;grid-row:1;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;column-gap:var(--gap)}
+  .talent__name{display:none}
+  .roles{grid-column:1/-1;grid-row:2}
+  .facts{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:10px 32px;padding-top:40px}
+  .about__text{grid-column:1/span 8}
+  .about__pic{grid-column:9/-1}
+  .close__invite{grid-column:1/-1}
+  .close__pic{grid-column:1/span 4}
+  .close__links{grid-column:6/-1}
+}
+
+/* ── Small phones: section headings scale with the screen so they keep to two lines ── */
+@media (max-width:389px){:root{--step-head:8.2vw}}
+
+/* ── Phone ─────────────────────────────────────────────── */
+@media (max-width:720px){
+  :root{--step-display:clamp(1.75rem,9.7vw,3.5rem)}
+  .hero__top{min-height:46vh;min-height:46svh}
+  .seam{display:flex;flex-wrap:wrap;column-gap:.24em}
+  .seam br{display:none}
+  .seam .l1{flex-basis:100%}
+  .seam .l2{display:contents}
+  .seam .l2 .ink{order:2}
+  .slot{order:1;flex-basis:100%;width:100%;height:1.55em;margin:.16em 0 .2em}
+  .hero__lead{flex-direction:column;align-items:flex-start;gap:24px;padding-bottom:56px}
+  .hero__lead p{font-size:1.125rem;max-width:30ch}
+  .doors{padding-bottom:88px}
+  .door-group,.door-group + .door-group{grid-column:1/-1}
+  .door{font-size:1.25rem}
+
+  .stack{font-size:clamp(3rem,15vw,5.5rem)}
+  .seq{width:100%}
+  .channels{grid-template-columns:1fr}
+
+  .talent__side{grid-template-columns:1fr}
+  .roles thead{display:none}
+  .roles tr{display:grid;grid-template-columns:1fr auto;column-gap:16px;padding-block:10px}
+  .roles td,.roles th,.roles tr.g td,.roles tr.g th,.roles tbody tr:first-child td,.roles tbody tr:first-child th{padding:0}
+  .roles tr.g{padding-top:34px}
+  .roles tbody tr:first-child{padding-top:0}
+  .roles .dept{grid-column:1/-1;width:auto;font-size:var(--step-small)}
+  .roles .dept:has(.vh){display:none}
+  .roles .focus{font-size:1rem}
+
+  .step:nth-child(n){grid-column:1/-1}
+  .step:nth-child(2){padding-left:6vw}
+  .step:nth-child(3){padding-left:12vw}
+  .step:nth-child(4){padding-left:18vw}
+  .step p{font-size:1rem}
+
+  .est__ctrl{flex-wrap:nowrap;gap:16px}
+  .range{flex:1 1 auto;min-width:0}
+  .ledger{grid-template-columns:minmax(0,52fr) minmax(0,48fr)}
+  .ledger li{row-gap:6px}
+  .fig,.fig-u{font-size:15vw}
+  .fig-u{grid-column:2;justify-self:start}
+  .fig-c{grid-column:1/-1;padding-left:0;font-size:1rem}
+
+  .about__p{font-size:1.25rem;line-height:1.36}
+  .about__text,.about__pic{grid-column:1/-1}
+  .about__pic{padding-top:40px}
+  .band__frame{aspect-ratio:4/3}
+
+  .close__pic{grid-column:1/span 6}
+  .close__links{grid-column:1/-1}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
-<a class="brand" href="#top" aria-label="MG Revenue home"><img src="mg-revenue-logo.png" alt="MG Revenue"></a>
-<nav class="links">
-<a href="#sales">Sales</a><a href="#outsourcing">Outsourcing</a><a href="#partner">Become a Partner</a><a href="#about">About</a>
-</nav>
-<a class="nav-cta" href="mailto:contact@mgrevenue.com">Let's Talk</a>
-<button class="menu" aria-label="Open menu">☰</button>
-</div></header>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M3 12h17M14 6l6 6-6 6"/></symbol>
+</svg>
 
-<main id="top">
-<section class="hero">
-<div class="wrap">
+<a class="skip" href="#main">Skip to content</a>
 
-<h1>We are focused on <span>increasing revenue.</span></h1>
-<p class="hero-copy">We do it in two ways: <strong>Sales</strong> to create more qualified opportunities, and <strong>Outsourcing</strong> to help companies build the teams they need to grow.</p>
-<div class="hero-actions"><a class="btn btn-main" href="#sales">Explore Sales</a><a class="btn btn-ghost" href="#outsourcing">Explore Outsourcing</a></div>
-</div>
-<div class="hero-visual" aria-hidden="true">
-<div class="v-frame"></div><div class="v-frame two"></div>
-<div class="engine sales"><small>GROWTH ENGINE 01</small><b>Sales</b><p>More qualified conversations.</p></div>
-<div class="engine outsourcing"><small>GROWTH ENGINE 02</small><b>Outsourcing</b><p>More capacity to execute.</p></div>
-<div class="connector c1"></div><div class="connector c2"></div>
-<div class="revenue-core"><b>REVENUE</b></div>
-</div>
+<header class="bar" data-tone="dark">
+  <div class="wrap bar__in">
+    <a class="bar__brand" href="#top" aria-label="MG Revenue, back to top"><img src="mg-revenue-logo.png" alt="" width="266" height="217"></a>
+    <nav class="bar__nav" aria-label="Main">
+      <a href="#sales">Sales</a>
+      <a href="#outsourcing">Outsourcing</a>
+      <a href="#partners">Partners</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="btn btn--gold" href="mailto:contact@mgrevenue.com">Let’s talk</a>
+    <button class="bar__menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+</header>
+
+<dialog class="sheet" id="menu" aria-label="Menu">
+  <div class="wrap">
+    <div class="sheet__top">
+      <img src="mg-revenue-logo.png" alt="MG Revenue" width="266" height="217">
+      <button class="bar__menu sheet__close" type="button" style="display:inline-flex">Close</button>
+    </div>
+    <nav class="sheet__nav" aria-label="Menu">
+      <a href="#sales">Sales</a>
+      <a href="#outsourcing">Outsourcing</a>
+      <a href="#partners">Partners</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="sheet__mail">
+      <a class="btn btn--gold" href="mailto:contact@mgrevenue.com">Email contact@mgrevenue.com</a>
+      <a class="link" href="mailto:contact@mgrevenue.com?subject=MG%20Revenue%20Partnership">Become a partner<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+  </div>
+</dialog>
+
+<main id="main">
+
+<section class="hero" id="top" data-tone="dark" aria-labelledby="hero-h">
+  <div class="wrap hero__top">
+    <h1 class="seam" id="hero-h"><span class="ink l1">More revenue,</span><br><span class="l2"><span class="ink">built in</span> <span class="slot" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" disablepictureinpicture disableremoteplayback poster="assets/img/domes-poster.jpg" width="720" height="288"><source src="assets/img/domes.mp4" type="video/mp4"><source src="assets/img/domes.webm" type="video/webm"></video></span> <span class="ink">Kosovo.</span></span></h1>
+  </div>
+  <div class="hero__gold" data-tone="gold">
+    <div class="wrap hero__lead">
+      <p data-load style="--d:650ms">MG Revenue grows revenue two ways: outbound sales that books qualified conversations, and English‑speaking talent from Kosovo that extends your team.</p>
+      <a class="btn btn--ink" href="mailto:contact@mgrevenue.com" data-load style="--d:760ms">Let’s talk<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+    <nav class="doors" aria-label="Where to start">
+      <div class="wrap grid doors__grid">
+        <div class="door-group" role="group" aria-label="For growing companies" data-load style="--d:880ms">
+          <a class="door" href="#sales">Book more qualified sales conversations<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="door" href="#outsourcing">Extend your team with talent from Kosovo<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+        <div class="door-group" role="group" aria-label="For advisors and fractional executives" data-load style="--d:960ms">
+          <a class="door" href="#partners">Advisors: earn a 10% lifetime share<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </nav>
+  </div>
 </section>
 
-<section>
-<div class="wrap">
-<div class="section-head"><h2>Two ways to move the business forward.</h2><p>Sales and outsourcing, built around what your business needs.</p></div>
-<div class="two-col">
-<article class="feature" id="sales"><span class="tag">SALES</span><h3>Create more opportunities.</h3><p>Build a consistent outbound motion around your ideal customers and turn targeted outreach into qualified sales conversations.</p><ul><li>Cold calling</li><li>Email outreach</li><li>LinkedIn outreach</li><li>Appointment setting</li><li>Lead generation</li><li>SDR / BDR support</li></ul></article>
-<article class="feature" id="outsourcing"><span class="tag">OUTSOURCING</span><h3>Build the team to execute.</h3><p>Extend your team with skilled, English-speaking talent from Kosovo — without building every function in-house.</p><ul><li>SDR / BDR</li><li>Virtual Assistant</li><li>Personal Assistant</li><li>Bookkeeper</li><li>Accountant</li><li>Data Entry</li></ul></article>
-</div>
-</div>
+<section class="sales chapter" id="sales" data-tone="dark" aria-labelledby="sales-h">
+  <div class="wrap grid sales__grid">
+    <div class="stack">
+      <p class="stack__l" data-reveal style="--i:0">Calls.</p>
+      <p class="stack__l" data-reveal style="--i:1">Emails.</p>
+      <p class="stack__l" data-reveal style="--i:2">LinkedIn.</p>
+      <h2 class="stack__l" id="sales-h" data-reveal style="--i:3"><span class="vh">Sales: </span>Meetings.</h2>
+    </div>
+
+    <figure class="seq" data-ui data-reveal style="--i:2">
+      <div class="seq__head"><span class="seq__title">Outbound sequence</span><span class="seq__tag">Example</span></div>
+      <p class="seq__who">VP Operations at a logistics company</p>
+      <ol class="seq__rows">
+        <li><span class="seq__day">Mon</span><span class="seq__ch">Cold call</span><span class="seq__st">Voicemail left</span></li>
+        <li><span class="seq__day">Tue</span><span class="seq__ch">Email</span><span class="seq__st">Opened twice</span></li>
+        <li><span class="seq__day">Thu</span><span class="seq__ch">LinkedIn</span><span class="seq__st">Connected</span></li>
+        <li><span class="seq__day">Mon</span><span class="seq__ch">Cold call</span><span class="seq__st">Spoke, interested</span></li>
+        <li class="is-won"><span class="seq__day">Tue</span><span class="seq__ch">Meeting booked</span><span class="seq__st">Thu, 10:00</span></li>
+      </ol>
+      <figcaption>An illustrative sequence. Yours is built around your ideal customers.</figcaption>
+    </figure>
+
+    <div class="sales__facts">
+      <p class="lead muted" data-reveal style="--i:0"><strong>Sales creates more opportunities.</strong> We build a consistent outbound motion around your ideal customers and turn targeted outreach into qualified sales conversations.</p>
+      <ul class="channels" aria-label="Sales services" data-reveal style="--i:1">
+        <li>Cold calling</li>
+        <li>Email outreach</li>
+        <li>LinkedIn outreach</li>
+        <li>Appointment setting</li>
+        <li>Lead generation</li>
+        <li>SDR / BDR support</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section>
-<div class="wrap">
-<div class="section-head"><h2>A simple system. Built around your growth.</h2><p>We keep the process clear, measurable, and focused on the work that creates business value.</p></div>
-<div class="process">
-<div class="step"><span class="step-num">01</span><h3>Define</h3><p>Clarify the target, role, goals and success criteria.</p></div>
-<div class="step"><span class="step-num">02</span><h3>Build</h3><p>Build the right outreach or talent solution.</p></div>
-<div class="step"><span class="step-num">03</span><h3>Execute</h3><p>Run the work consistently with your team.</p></div>
-<div class="step"><span class="step-num">04</span><h3>Grow</h3><p>Improve what works and create more capacity.</p></div>
-</div>
-</div>
+<section class="talent chapter" id="outsourcing" data-tone="panel" aria-labelledby="talent-h">
+  <div class="wrap">
+    <h2 class="head" id="talent-h" data-reveal>Talent for the work<br> behind growth.</h2>
+    <div class="grid talent__grid">
+      <div class="talent__side" data-reveal style="--i:1">
+        <div class="talent__intro">
+        <p class="lead">Extend your team with skilled, English‑speaking talent from Kosovo, without building every function in‑house.</p>
+        <p class="muted">Our outsourcing model works as a team extension: practical, flexible and built around the role you actually need.</p>
+      </div>
+        <figure class="talent__pic">
+        <img src="assets/img/boulevard-1200.jpg" width="1200" height="800" alt="People walking down a wide pedestrian boulevard under strung banners on a winter day" loading="lazy" decoding="async">
+        <figcaption class="cap">Mother Teresa Boulevard, Prishtina.</figcaption>
+      </figure>
+      </div>
+      <p class="talent__name" aria-hidden="true">Roles</p>
+      <table class="roles" data-reveal style="--i:2">
+        <caption class="vh">Outsourcing roles by department</caption>
+        <thead class="vh"><tr><td>Department</td><th scope="col">Role</th><td>Focus</td></tr></thead>
+        <tbody>
+          <tr><td class="dept">Sales</td><th scope="row">SDR</th><td class="focus">Prospecting and first calls</td></tr>
+          <tr><td class="dept"><span class="vh">Sales</span></td><th scope="row">BDR</th><td class="focus">Outbound pipeline</td></tr>
+          <tr><td class="dept"><span class="vh">Sales</span></td><th scope="row">Account Executive</th><td class="focus">Discovery to signed deal</td></tr>
+          <tr class="g"><td class="dept">Operations</td><th scope="row">Virtual Assistant</th><td class="focus">Inbox, calendar, admin</td></tr>
+          <tr><td class="dept"><span class="vh">Operations</span></td><th scope="row">Personal Assistant</th><td class="focus">Executive support</td></tr>
+          <tr><td class="dept"><span class="vh">Operations</span></td><th scope="row">Data Entry</th><td class="focus">Clean, current records</td></tr>
+          <tr class="g"><td class="dept">Finance</td><th scope="row">Bookkeeper</th><td class="focus">Day‑to‑day books</td></tr>
+          <tr><td class="dept"><span class="vh">Finance</span></td><th scope="row">Accountant</th><td class="focus">Reconciliation and reporting</td></tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
 </section>
 
-<section id="outsourcing-services">
-<div class="wrap">
-<div class="section-head"><h2>Talent for the work behind growth.</h2><p>Our outsourcing model is designed as a team extension — practical, flexible and built around the role you actually need.</p></div>
-<div class="roles">
-<div class="role"><b>Sales</b><div>SDR  |  BDR  |  Account Executive</div></div>
-<div class="role"><b>Operations</b><div>Virtual Assistant  |  Personal Assistant  |  Data Entry</div></div>
-<div class="role"><b>Finance</b><div>Bookkeeper  |  Accountant</div></div>
-</div>
-</div>
+<section class="chapter" id="process" data-tone="dark" aria-labelledby="steps-h">
+  <div class="wrap">
+    <ol class="steps">
+      <li class="step" data-reveal style="--i:0"><h2 class="head" id="steps-h">First, we define the target.</h2><p>Clarify the target, the role, the goals and the success criteria.</p></li>
+      <li class="step" data-reveal style="--i:1"><h3 class="head">Then we build the solution.</h3><p>The right outreach motion or the right talent, shaped around your business.</p></li>
+      <li class="step" data-reveal style="--i:2"><h3 class="head">We execute with your team.</h3><p>Run the work consistently, alongside the people you already have.</p></li>
+      <li class="step" data-reveal style="--i:3"><h3 class="head">And grow what works.</h3><p>Improve what works and create more capacity.</p></li>
+    </ol>
+  </div>
 </section>
 
-<section id="partner">
-<div class="wrap">
-<div class="partner">
-<div><span class="tag" style="color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.12em">BECOME A PARTNER</span><h2>Help your clients grow. Create another revenue stream.</h2><p>We work with Fractional CFOs, Fractional COOs, consultants, advisors and other professionals who serve growing companies.</p><p>Introduce a client that needs sales or outsourcing support. We take it from there.</p><a class="btn btn-main" href="mailto:contact@mgrevenue.com?subject=MG Revenue Partnership">Become a Partner</a></div>
-<div><div class="share">10%<small>lifetime revenue share on qualifying outsourcing introductions</small></div><div style="margin-top:38px;color:#888;font-size:13px;line-height:2">Introduce  |  We connect  |  Client gets support  |  You earn</div></div>
-</div>
-</div>
+<section class="partners chapter" id="partners" data-tone="gold" aria-labelledby="partners-h">
+  <div class="wrap grid partners__grid">
+    <div class="partners__copy">
+      <h2 class="head" id="partners-h" data-reveal>Introduce a client.<br> <span>Earn a lifetime share.</span></h2>
+      <p class="lead" data-reveal style="--i:1">We work with Fractional CFOs, Fractional COOs, consultants, advisors and other professionals who serve growing companies.</p>
+      <p data-reveal style="--i:2">Introduce a client that needs sales or outsourcing support. We take it from there.</p>
+      <ol class="flow" aria-label="How partnership works" data-reveal style="--i:3">
+        <li>Introduce</li><li>We connect</li><li>Client gets support</li><li>You earn</li>
+      </ol>
+      <a class="btn btn--ink" href="mailto:contact@mgrevenue.com?subject=MG%20Revenue%20Partnership" data-reveal style="--i:4">Become a partner<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+
+    <div class="est" data-reveal style="--i:2">
+      <p class="est__q" id="est-q">If a client you introduce spends <output id="spend-out" for="spend">$4,000</output> a month with us</p>
+      <div class="est__ctrl">
+        <input class="range" id="spend" type="range" min="500" max="25000" step="500" value="4000" aria-labelledby="est-q">
+        <fieldset class="seg">
+          <legend class="vh">Currency</legend>
+          <label><input type="radio" name="cur" value="USD" aria-label="US dollars" checked><span aria-hidden="true">$</span></label>
+          <label><input type="radio" name="cur" value="EUR" aria-label="Euros"><span aria-hidden="true">€</span></label>
+          <label><input type="radio" name="cur" value="GBP" aria-label="Pounds sterling"><span aria-hidden="true">£</span></label>
+        </fieldset>
+      </div>
+      <ul class="ledger" aria-live="polite">
+        <li><span class="fig">10</span><span class="fig-u">%</span><span class="fig-c">lifetime revenue share on qualifying outsourcing introductions</span></li>
+        <li><span class="fig" data-out="monthly">400</span><span class="fig-u" aria-hidden="true"></span><span class="fig-c"><span data-cur-name>US dollars</span> to you each month</span></li>
+        <li><span class="fig" data-out="yearly">4,800</span><span class="fig-u" aria-hidden="true"></span><span class="fig-c"><span data-cur-name>US dollars</span> to you each year</span></li>
+        <li data-row="projection" hidden><span class="fig" data-out="projection"></span><span class="fig-u" aria-hidden="true"></span><span class="fig-c" data-out="projection-caption"></span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section id="about">
-<div class="wrap about-grid">
-<div><span class="tag" style="color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.12em">ABOUT MG REVENUE</span><h2>Built around one goal: increasing revenue.</h2></div>
-<div class="about-box"><strong>Sales and outsourcing.</strong><p>MG Revenue is a Kosovo-based revenue and outsourcing company helping businesses create more opportunities and build the capacity to execute.</p><p>Kosovo gives us access to a young, highly capable, English-speaking workforce. We use that talent to help companies extend their teams while keeping quality and communication at the center.</p><p>Our approach is straightforward: understand what the business needs, build the right solution, and execute with consistency.</p></div>
-</div>
+<section class="chapter" id="about" data-tone="dark" aria-labelledby="about-h">
+  <div class="wrap grid about__grid">
+    <ul class="facts" data-reveal style="--i:1">
+      <li>Based in Kosovo</li>
+      <li>MG Revenue SH.P.K.</li>
+      <li><a href="mailto:contact@mgrevenue.com">contact@mgrevenue.com</a></li>
+    </ul>
+    <div class="about__text">
+      <h2 class="head" id="about-h" data-reveal>One goal: increasing revenue.</h2>
+      <p class="about__p" data-reveal style="--i:1"><strong>MG Revenue</strong> is a Kosovo‑based revenue and outsourcing company helping businesses create more opportunities and build the capacity to execute. Kosovo gives us access to a young, highly capable, English‑speaking workforce, and we use that talent to extend your team while keeping quality and communication at the centre.</p>
+      <p class="about__p" data-reveal style="--i:2">Our approach is straightforward: understand what the business needs, build the right solution, and execute with consistency.</p>
+    </div>
+    <figure class="about__pic" data-reveal style="--i:2">
+      <img src="assets/img/dardania-560.jpg" width="560" height="560" alt="Prishtina's Dardania neighbourhood seen from above, apartment blocks and a busy ring road" loading="lazy" decoding="async">
+      <figcaption class="cap">Dardania, Prishtina, from above.</figcaption>
+    </figure>
+  </div>
+  <figure class="band">
+    <div class="band__frame" data-reveal>
+      <img src="assets/img/library-1920.jpg" srcset="assets/img/library-1100.jpg 1100w, assets/img/library-1920.jpg 1920w" sizes="100vw" width="1920" height="823" alt="The National Library of Kosovo, a concrete building wrapped in a metal lattice and crowned with white domes, behind tall poplars" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="cap wrap">National Library of Kosovo, Prishtina.</figcaption>
+  </figure>
 </section>
 
-<section class="cta"><div class="wrap"><h2>Ready to increase revenue?</h2><p>Tell us where you need help — sales, outsourcing, or both.</p><a class="btn btn-main" href="mailto:contact@mgrevenue.com">contact@mgrevenue.com</a></div></section>
 </main>
 
-<footer><div class="wrap foot"><div class="foot-brand"><img src="mg-revenue-logo.png" alt="MG Revenue"><span>© 2026 MG Revenue SH.P.K.</span></div><span>Sales  |  Outsourcing  |  Partnerships</span></div></footer>
+<footer class="close" id="contact" data-tone="light" aria-labelledby="close-h">
+  <div class="wrap grid close__grid">
+    <div class="close__invite">
+      <h2 class="head" id="close-h" data-reveal>Ready to increase revenue?</h2>
+      <p class="lead" data-reveal style="--i:1">Tell us where you need help: sales, outsourcing, or both.</p>
+      <a class="btn btn--ink" href="mailto:contact@mgrevenue.com" data-reveal style="--i:2">contact@mgrevenue.com<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+    <figure class="close__pic" data-reveal style="--i:2">
+      <img src="assets/img/newborn-640.jpg" width="640" height="640" alt="The NEWBORN letters monument in Prishtina, lit at night" loading="lazy" decoding="async">
+      <figcaption>Newborn monument, Prishtina.</figcaption>
+    </figure>
+    <div class="close__links" data-reveal style="--i:3">
+      <h2>Bringing us a client?</h2>
+      <a class="link" href="mailto:contact@mgrevenue.com?subject=MG%20Revenue%20Partnership">Become a partner<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
+      <p class="note">Kosovo runs on Central European Time.<span data-kosovo-now hidden> It’s <time data-kosovo-time></time> there now.</span></p>
+      <nav class="close__nav" aria-label="Footer">
+        <a href="#sales">Sales</a><a href="#outsourcing">Outsourcing</a><a href="#partners">Partners</a><a href="#about">About</a>
+      </nav>
+    </div>
+  </div>
+  <div class="wrap close__legal">
+    <span>© 2026 MG Revenue SH.P.K. · Sales, outsourcing and partnerships</span>
+    <p>Photographs and film from Wikimedia Commons, cropped and toned to monochrome: <a href="https://commons.wikimedia.org/wiki/File:National_Library_of_Kosovo_video_from_the_drone.webm">National Library of Kosovo video from the drone</a> by Arianit (CC BY‑SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Mother_Teresa_Boulevard_10th_anniversary.jpg">Mother Teresa Boulevard 10th anniversary</a> by Albinfo (CC0); <a href="https://commons.wikimedia.org/wiki/File:Dardania_neighbhorhood_Prishtina.JPG">Dardania neighbourhood Prishtina</a> by Arianit Dobroshi (CC BY‑SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Prishtina_Public_Library.jpg">Prishtina Public Library</a> by Avocados2026 (CC BY‑SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:NEWBORN_monument_in_Pristina,_2025_repainting,_by_night.jpg">NEWBORN monument in Pristina, 2025 repainting, by night</a> by Bdx (CC0). <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY‑SA 4.0 licence</a>.</p>
+  </div>
+  <p class="close__mark" aria-hidden="true">MG Revenue</p>
+</footer>
 
 <script>
-const menu=document.querySelector('.menu'), nav=document.querySelector('.links');
-menu?.addEventListener('click',()=>{nav.style.display=nav.style.display==='flex'?'none':'flex';nav.style.position='absolute';nav.style.top='86px';nav.style.left='16px';nav.style.right='16px';nav.style.padding='20px';nav.style.flexDirection='column';nav.style.background='#0d0d0e';nav.style.border='1px solid #28282a';nav.style.borderRadius='14px';});
+(() => {
+  const root = document.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* The bar takes the tone of the chapter under its bottom edge. */
+  const bar = document.querySelector('.bar');
+  const zones = [...document.querySelectorAll('main [data-tone], footer[data-tone]')];
+  let queued = false;
+  const tone = () => {
+    queued = false;
+    const y = bar.offsetHeight - 1;
+    let t = 'dark';
+    for (const z of zones) {
+      const r = z.getBoundingClientRect();
+      if (r.top <= y && r.bottom > y) t = z.dataset.tone;
+    }
+    if (bar.dataset.tone !== t) bar.dataset.tone = t;
+  };
+  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(tone); } };
+  addEventListener('scroll', queue, { passive: true });
+  addEventListener('resize', queue);
+  tone();
+
+  /* Section entrances, once. Content is visible without this script. */
+  if (root.classList.contains('js')) {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+    }, { rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+  }
+
+  /* The loop inside the headline: still under reduced motion, paused off-screen. */
+  const vid = document.querySelector('.slot video');
+  if (vid) {
+    const play = () => { if (!reduce.matches) vid.play().catch(() => {}); };
+    if (reduce.matches) vid.pause();
+    reduce.addEventListener?.('change', () => (reduce.matches ? vid.pause() : play()));
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([e]) => (e.isIntersecting ? play() : vid.pause())).observe(vid);
+    }
+  }
+
+  /* Menu sheet. Escape, the close button and any link close it; focus returns to Menu. */
+  const menuBtn = document.querySelector('.bar .bar__menu');
+  const sheet = document.getElementById('menu');
+  if (menuBtn && sheet && typeof sheet.showModal === 'function') {
+    const close = () => {
+      if (!sheet.open || sheet.classList.contains('is-closing')) return;
+      const done = () => { sheet.classList.remove('is-closing'); sheet.close(); };
+      if (reduce.matches) return done();
+      sheet.classList.add('is-closing');
+      setTimeout(done, 180);
+    };
+    menuBtn.addEventListener('click', () => { sheet.showModal(); menuBtn.setAttribute('aria-expanded', 'true'); });
+    sheet.addEventListener('cancel', (e) => { e.preventDefault(); close(); });
+    sheet.addEventListener('close', () => { menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.focus({ preventScroll: true }); });
+    sheet.querySelector('.sheet__close').addEventListener('click', close);
+    sheet.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+    matchMedia('(min-width: 861px)').addEventListener?.('change', (m) => { if (m.matches && sheet.open) sheet.close(); });
+  }
+
+  /* Partner estimator: 10% of what an introduced client pays, for as long as they stay. */
+  const SHARE = 0.10;
+  const CURRENCY = { USD: 'US dollars', EUR: 'euros', GBP: 'pounds sterling' };
+
+  // Your call: should the page project a longer "lifetime" figure, and over what horizon?
+  // Return { amount, caption } to show a fourth ledger row, or null to keep the
+  // page to the monthly and yearly figures. `monthlyShare` is already 10% of the
+  // client's monthly spend; `currencyName` is e.g. "euros".
+  function projectLifetimeShare(monthlyShare, currencyName) {
+    // TODO(owner): decide whether to show a multi-year figure. See the notes in the chat.
+    return null;
+  }
+
+  const range = document.getElementById('spend');
+  if (range) {
+    const est = range.closest('.est');
+    const out = document.getElementById('spend-out');
+    const whole = new Intl.NumberFormat('en', { maximumFractionDigits: 0 });
+    const lang = (navigator.language || 'en-US');
+    const guess = /-GB$/i.test(lang) ? 'GBP'
+      : /^(de|fr|it|es|nl|pt|fi|el|sk|sl|et|lv|lt|ga|mt|hr|sq)\b|-(AT|BE|DE|ES|FI|FR|IE|IT|NL|PT|XK)$/i.test(lang) ? 'EUR'
+      : 'USD';
+    const pick = est.querySelector(`input[name=cur][value=${guess}]`);
+    if (pick) pick.checked = true;
+
+    const update = () => {
+      const cur = est.querySelector('input[name=cur]:checked').value;
+      const spend = Number(range.value);
+      const money = new Intl.NumberFormat('en', { style: 'currency', currency: cur, maximumFractionDigits: 0 });
+      const monthly = spend * SHARE;
+      out.textContent = money.format(spend);
+      range.setAttribute('aria-valuetext', `${money.format(spend)} a month`);
+      est.querySelector('[data-out=monthly]').textContent = whole.format(monthly);
+      est.querySelector('[data-out=yearly]').textContent = whole.format(monthly * 12);
+      est.querySelectorAll('[data-cur-name]').forEach((n) => { n.textContent = CURRENCY[cur]; });
+
+      const row = est.querySelector('[data-row=projection]');
+      const projection = projectLifetimeShare(monthly, CURRENCY[cur]);
+      row.hidden = !projection;
+      if (projection) {
+        row.querySelector('[data-out=projection]').textContent = whole.format(projection.amount);
+        row.querySelector('[data-out=projection-caption]').textContent = projection.caption;
+      }
+    };
+    range.addEventListener('input', update);
+    est.addEventListener('change', update);
+    update();
+  }
+
+  /* Local time in Kosovo, in the close. */
+  const now = document.querySelector('[data-kosovo-now]');
+  if (now) {
+    const clock = now.querySelector('time');
+    const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Belgrade', hour: '2-digit', minute: '2-digit' });
+    const tick = () => { const d = new Date(); clock.textContent = fmt.format(d); clock.dateTime = d.toISOString(); };
+    tick();
+    now.hidden = false;
+    setInterval(tick, 30000);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
+  }
+})();
 </script>
 </body>
 </html>
