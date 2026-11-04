@@ -314,7 +314,7 @@ Under reduced motion, all entrance and load animation is removed and content is 
 - **Do** separate content with space, a field change, a tone step between ground, panel and raised panel, or a 2px gap of the field.
 - **Do** write a calculation as a sentence that resolves into one display figure, and show a count as one solid block per unit.
 - **Do** give controls a press response (scale 0.97 over 160ms; 0.94 for stepper buttons) and restrict hover effects to fine pointers.
-- **Do** run new photographs through the shared colour grade in `.taste-skill/build-assets.sh`, never a one-off adjustment per picture; caption the place or the activity and credit the source.
+- **Do** run new photographs through the shared colour grade in `.taste-skill/build-assets.sh`, never a one-off adjustment per picture; photographs carry no captions (the owner removed them), so credit the source in the close.
 - **Do** keep the hero's gold block free of position, transform, opacity, isolation and filter.
 
 ### Don't:

@@ -30,6 +30,7 @@ Owner's notes: logo a bit bigger; change the first text; photo changes; price ca
 - Headline "More meetings, more capacity." (Sales gives meetings, Outsourcing gives capacity; Kosovo moves to the supporting sentence).
 - Photographs of people at work replace the Prishtina architecture.
 - Follow-up the same day: the owner found the monochrome photographs too gray. Every still and the headline loop now share one warm colour grade (warm hues kept, cool hues quieted) instead.
+- Second follow-up the same day: the owner asked for the text under the photos to go. The four photo captions (Prague desk, working session, Buenos Aires band, laptop) are removed; sources stay credited in the close. The illustrative sequence card keeps its caption because it is not a photograph.
 - Partner calculator: clients 1–10 (stepper) × monthly spend per client $2,500–$40,000 (step $500) × 10%. Target is $10,000 **a month**; the calculator opens on 5 × $20,000, exactly on the line. No multi-year projection: the share runs "for as long as they stay".
 
 ## Unresolved

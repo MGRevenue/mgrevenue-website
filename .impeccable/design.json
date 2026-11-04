@@ -340,7 +340,7 @@
       "script": ".taste-skill/build-assets.sh",
       "provenance": "assets/credits.json",
       "source": "Wikimedia Commons, credited in the close (title, author, licence), including CC0 images",
-      "captions": "Name the place when the source gives one ('A shared desk, Prague.'), otherwise the activity ('A working session.').",
+      "captions": "None. The owner removed the photo captions on 2026-11-04; sources are credited in the close only.",
       "crops": [
         "21:9 band (4:3 on phones)",
         "3:2 landscape",
@@ -511,7 +511,7 @@
       "Do separate content with space, a field change, a tone step between ground, panel and raised panel, or a 2px gap of the field.",
       "Do write a calculation as a sentence that resolves into one display figure, and show a count as one solid block per unit.",
       "Do give controls a press response (scale 0.97 over 160ms; 0.94 for stepper buttons) and restrict hover effects to fine pointers.",
-      "Do run new photographs through the shared colour grade in .taste-skill/build-assets.sh, never a one-off adjustment per picture; caption the place or the activity and credit the source.",
+      "Do run new photographs through the shared colour grade in .taste-skill/build-assets.sh, never a one-off adjustment per picture; photographs carry no captions (the owner removed them), so credit the source in the close.",
       "Do keep the hero's gold block free of position, transform, opacity, isolation and filter."
     ],
     "donts": [
