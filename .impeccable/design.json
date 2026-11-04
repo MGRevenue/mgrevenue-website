@@ -168,7 +168,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display (hero)",
-        "purpose": "Hero headline only, 'MORE MEETINGS, / MORE [loop] CAPACITY.'; uppercase; weight 100 at >=1200px, 300 below; phone step clamp(1.75rem, 9.7vw, 3.5rem) with the loop on its own line."
+        "purpose": "Hero headline only, 'MORE REVENUE, / TWO [loop] WAYS.'; uppercase; weight 100 at >=1200px, 300 below; phone step clamp(1.75rem, 9.7vw, 3.5rem) with the loop on its own line."
       },
       "display-stack": {
         "displayName": "Display stack",
@@ -387,7 +387,7 @@
       "kind": "custom",
       "refersTo": null,
       "description": "Headline crossing the black/gold seam, inked by difference blend so it reads gold on black and black on gold; the 5:2 typing loop sits in the slot.",
-      "html": "<div class=\"ds-hero\"><div class=\"ds-top\"><h1 class=\"ds-seam\"><span class=\"ds-ink\">More meetings,</span><br><span class=\"ds-ink\">more</span> <span class=\"ds-slot\"></span> <span class=\"ds-ink\">capacity.</span></h1></div><div class=\"ds-gold\"><p>MG Revenue grows revenue two ways: outbound sales that books qualified meetings, and English-speaking talent from Kosovo that adds capacity to your team.</p></div></div>",
+      "html": "<div class=\"ds-hero\"><div class=\"ds-top\"><h1 class=\"ds-seam\"><span class=\"ds-ink\">More revenue,</span><br><span class=\"ds-ink\">two</span> <span class=\"ds-slot\"></span> <span class=\"ds-ink\">ways.</span></h1></div><div class=\"ds-gold\"><p>Outbound sales that books qualified meetings, and English-speaking talent from Kosovo that adds capacity to your team.</p></div></div>",
       "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-hero{background:var(--bg);overflow:hidden}.ds-top{padding:48px 32px 0}.ds-seam{margin:0 0 -.62em;font:100 4.5rem/.95 Zodiak,Georgia,serif;letter-spacing:-.01em;text-transform:uppercase;color:#dcae63}.ds-ink{mix-blend-mode:difference}.ds-slot{display:inline-block;width:2em;height:.86em;margin:0 .02em;vertical-align:-.08em;background:var(--panel2)}.ds-gold{background:var(--accent);color:var(--bg);padding:calc(4.5rem * .62 + 40px) 32px 48px;font:400 1.25rem/1.34 'Hanken Grotesk',system-ui,sans-serif}.ds-gold p{margin:0;max-width:36ch}"
     },
     {

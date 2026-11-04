@@ -17,7 +17,7 @@ OWN-WORLD: Near-black #080808 ground, warm ink #f4f3ef, champagne gold #d4a65b u
 
 STORY: The visitor learns that MG Revenue grows revenue two ways (outbound sales that books meetings, Kosovo-based talent that adds capacity), sees every channel and role, follows four plain steps, sees partners earn 10% for as long as their clients stay and how several clients add up to $10,000 a month, and emails.
 
-FIRST VIEWPORT: Black field above a gold field meeting at about 55% height. "MORE MEETINGS, / MORE [clip] CAPACITY." at 9–10vw straddles the seam and changes ink as it crosses. The logo sits large (80px) over the empty top of the black field and settles to 56px in the bar once the page scrolls. Four links and a "Let's talk" button top-right. The supporting sentence and the action sit on the gold field.
+FIRST VIEWPORT: Black field above a gold field meeting at about 55% height. "MORE REVENUE, / TWO [clip] WAYS." at 9–10vw straddles the seam and changes ink as it crosses. The logo sits large (80px) over the empty top of the black field and settles to 56px in the bar once the page scrolls. Four links and a "Let's talk" button top-right. The supporting sentence and the action sit on the gold field.
 
 FORM: Seed key 393c13f7 (originally "Prishtina as a place"; imagery moved to people at work in owner review 1). Signature interaction: the gold field rises on load, and the partner calculator in the partner chapter, where clients add up block by block to the $10,000-a-month line. Motion grammar: colour by chapter, staggered section entrances, press travel on controls.
 
@@ -31,6 +31,7 @@ Owner's notes: logo a bit bigger; change the first text; photo changes; price ca
 - Photographs of people at work replace the Prishtina architecture.
 - Follow-up the same day: the owner found the monochrome photographs too gray. Every still and the headline loop now share one warm colour grade (warm hues kept, cool hues quieted) instead.
 - Second follow-up the same day: the owner asked for the text under the photos to go. The four photo captions (Prague desk, working session, Buenos Aires band, laptop) are removed; sources stay credited in the close. The illustrative sequence card keeps its caption because it is not a photograph.
+- Third follow-up the same day: the owner wanted different headline wording. It is now "More revenue, two ways." (line 1 names the outcome, line 2 promises the two services, which the gold sentence then names). The supporting sentence drops its "MG Revenue grows revenue two ways:" opening so it does not repeat the headline; og:title follows the headline.
 - Partner calculator: clients 1–10 (stepper) × monthly spend per client $2,500–$40,000 (step $500) × 10%. Target is $10,000 **a month**; the calculator opens on 5 × $20,000, exactly on the line. No multi-year projection: the share runs "for as long as they stay".
 
 ## Unresolved
