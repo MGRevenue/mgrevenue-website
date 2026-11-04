@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-28T11:19:15+00:00",
+  "generatedAt": "2026-11-04T11:35:55+00:00",
   "title": "Design System: MG Revenue",
   "extensions": {
     "colorMeta": {
@@ -168,7 +168,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display (hero)",
-        "purpose": "Hero headline only; uppercase; weight 100 at >=1200px, 300 below; phone step clamp(1.75rem, 9.7vw, 3.5rem)."
+        "purpose": "Hero headline only, 'MORE MEETINGS, / MORE [loop] CAPACITY.'; uppercase; weight 100 at >=1200px, 300 below; phone step clamp(1.75rem, 9.7vw, 3.5rem) with the loop on its own line."
       },
       "display-stack": {
         "displayName": "Display stack",
@@ -176,7 +176,7 @@
       },
       "display-figure": {
         "displayName": "Display figure",
-        "purpose": "Partner ledger figures; tabular lining numerals; phone 15vw."
+        "purpose": "The single figure the partner calculator resolves to, followed by 'a month' at the lead step; tabular lining numerals; phone 15vw."
       },
       "headline": {
         "displayName": "Headline",
@@ -184,11 +184,11 @@
       },
       "door": {
         "displayName": "Door",
-        "purpose": "Hero entry links on gold."
+        "purpose": "Hero entry links on gold; also the stepper's client count (Zodiak 400, tabular lining)."
       },
       "lead": {
         "displayName": "Lead",
-        "purpose": "Opening paragraph of each chapter."
+        "purpose": "Opening paragraph of each chapter, the calculator question and the sentence under the $10,000 line; live values at weight 600."
       },
       "body": {
         "displayName": "Body",
@@ -196,11 +196,11 @@
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Captions, facts, legal, card tags."
+        "purpose": "Captions, facts, legal, card tags, the key line under the $10,000 line."
       },
       "button": {
         "displayName": "Button",
-        "purpose": "Controls; bar links use weight 500."
+        "purpose": "Controls; bar links use weight 500; the $10,000 marker and flow steps use 600."
       },
       "wordmark": {
         "displayName": "Closing wordmark",
@@ -238,7 +238,7 @@
       {
         "name": "t-press",
         "value": "160ms",
-        "purpose": "Press: scale .97 on buttons, .985 on doors, 1.12 on range thumb."
+        "purpose": "Press: scale .97 on buttons, .94 on stepper buttons, .985 on doors, 1.12 on range thumb."
       },
       {
         "name": "t-hover",
@@ -249,6 +249,21 @@
         "name": "bar-tone",
         "value": "300ms ease",
         "purpose": "Bar background/colour/logo filter follow the chapter."
+      },
+      {
+        "name": "logo-settle",
+        "value": "transform scale(.7) over 320ms ease-out, past 24px scroll (scale .77 at <=860px)",
+        "purpose": "Logo 80px over the empty hero top settles to 56px, centred in the bar; starts settled without animation on a restored scroll; instant under reduced motion. The menu sheet mirrors the state on open."
+      },
+      {
+        "name": "line-count",
+        "value": "solid blocks scaleX 0 -> 1, 640ms ease-expo, 150ms apart, from 380ms; pale blocks fade 420ms ease-out, 14ms apart",
+        "purpose": "First view (80% visible) of the $10,000 line: clients add up one block at a time. Not under reduced motion."
+      },
+      {
+        "name": "line-state",
+        "value": "background-color 140ms (to pale) / 220ms (to solid)",
+        "purpose": "Blocks switching between pale and solid as the calculator changes."
       },
       {
         "name": "reveal",
@@ -268,7 +283,7 @@
       {
         "name": "slot-open",
         "value": "900ms ease-in-out, delay 450ms",
-        "purpose": "Headline photo slot wipes open."
+        "purpose": "Headline loop slot wipes open."
       },
       {
         "name": "load",
@@ -278,7 +293,7 @@
       {
         "name": "reduced-motion",
         "value": "prefers-reduced-motion: reduce",
-        "purpose": "No entrance or load animation; content static and visible; loop paused on poster; smooth scroll off; sheet without transition and closes instantly. Content visible without JS."
+        "purpose": "No entrance or load animation; content static and visible; logo resizes without transition; $10,000 line appears complete; loop paused on poster; smooth scroll off; sheet without transition and closes instantly. Content visible without JS."
       }
     ],
     "breakpoints": [
@@ -290,12 +305,12 @@
       {
         "name": "phone",
         "value": "720px",
-        "purpose": "max-width: single column, re-sized display"
+        "purpose": "max-width: single column, re-sized display, stepper and slider stack, $10,000 line 48px, band 4:3"
       },
       {
         "name": "menu",
         "value": "860px",
-        "purpose": "max-width: Menu sheet, bar 64px"
+        "purpose": "max-width: Menu sheet, bar 64px, logo 60px (46px settled)"
       },
       {
         "name": "tablet",
@@ -310,7 +325,7 @@
       {
         "name": "laptop",
         "value": "1280px",
-        "purpose": "max-width: partner copy and estimator stack"
+        "purpose": "max-width: partner copy and calculator stack"
       },
       {
         "name": "container",
@@ -319,11 +334,15 @@
       }
     ],
     "imagery": {
+      "subject": "Credited open-licence photographs of anonymous people at work (Wikimedia Commons), never presented as MG Revenue's own office, team or clients.",
       "treatment": "-colorspace Gray -sigmoidal-contrast 3,50% +level-colors '#0b0a08,#f4efe4'",
+      "videoTreatment": "format=gray, curves=all='0/0.04 0.5/0.52 1/0.95', colorchannelmixer=rr=1.0:gg=0.975:bb=0.92; 8 s loop, last second cross-faded into the first",
       "script": ".taste-skill/build-assets.sh",
-      "source": "Wikimedia Commons, credited in the close",
+      "provenance": "assets/credits.json",
+      "source": "Wikimedia Commons, credited in the close (title, author, licence), including CC0 images",
+      "captions": "Name the place when the source gives one ('A shared desk, Prague.'), otherwise the activity ('A working session.').",
       "crops": [
-        "21:9 band",
+        "21:9 band (4:3 on phones)",
         "3:2 landscape",
         "1:1 square",
         "5:2 headline loop"
@@ -343,9 +362,9 @@
       "name": "Ink Button",
       "kind": "button",
       "refersTo": "button-ink",
-      "description": "Action on gold and ink fields; label turns light gold on hover.",
+      "description": "Action on gold and ink fields; steps to Raised Panel with a light-gold label on hover.",
       "html": "<div class=\"ds-field\"><a class=\"ds-btn ds-btn-ink\" href=\"#\">Become a partner<svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 12h17M14 6l6 6-6 6\"/></svg></a></div>",
-      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-ico{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.65em;min-height:52px;padding:0 1.4em;border:0;border-radius:0;font:600 1rem/1 'Hanken Grotesk',system-ui,sans-serif;letter-spacing:.005em;text-decoration:none;white-space:nowrap;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 200ms ease,color 200ms ease}.ds-btn:active{transform:scale(.97)}.ds-field{background:var(--accent);padding:32px}.ds-btn-ink{background:var(--bg);color:var(--accent)}.ds-btn-ink:hover{color:var(--accent2)}.ds-btn-ink:focus-visible{outline:2px solid var(--bg);outline-offset:3px}"
+      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-ico{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.65em;min-height:52px;padding:0 1.4em;border:0;border-radius:0;font:600 1rem/1 'Hanken Grotesk',system-ui,sans-serif;letter-spacing:.005em;text-decoration:none;white-space:nowrap;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 200ms ease,color 200ms ease}.ds-btn:active{transform:scale(.97)}.ds-field{background:var(--accent);padding:32px}.ds-btn-ink{background:var(--bg);color:var(--accent)}.ds-btn-ink:hover{color:var(--accent2);background:var(--panel2)}.ds-btn-ink:focus-visible{outline:2px solid var(--bg);outline-offset:3px}"
     },
     {
       "name": "Text Link",
@@ -359,7 +378,7 @@
       "name": "Chapter Bar",
       "kind": "nav",
       "refersTo": "bar-dark",
-      "description": "Fixed bar that takes the tone of the chapter beneath it (dark shown; gold variant swaps to ink button).",
+      "description": "Fixed bar that takes the tone of the chapter beneath it (dark shown; gold variant swaps to ink button). The logo is 80px over the hero top and settles to 56px, centred, once the page scrolls.",
       "html": "<header class=\"ds-bar\"><span class=\"ds-brand\">MG</span><nav class=\"ds-nav\"><a href=\"#\">Sales</a><a href=\"#\">Outsourcing</a><a href=\"#\">Partners</a><a href=\"#\">About</a></nav><a class=\"ds-bar-btn\" href=\"#\">Let’s talk</a></header><header class=\"ds-bar ds-bar-gold\"><span class=\"ds-brand\">MG</span><nav class=\"ds-nav\"><a href=\"#\">Sales</a><a href=\"#\">Outsourcing</a><a href=\"#\">Partners</a><a href=\"#\">About</a></nav><a class=\"ds-bar-btn\" href=\"#\">Let’s talk</a></header>",
       "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-bar{height:72px;display:flex;align-items:center;gap:32px;padding:0 32px;background:var(--bg);color:var(--ink);font:500 1rem/1 'Hanken Grotesk',system-ui,sans-serif;transition:background-color 300ms ease,color 300ms ease}.ds-bar-gold{background:var(--accent);color:var(--bg)}.ds-brand{margin-right:auto;font:300 1.75rem/1 Zodiak,Georgia,serif}.ds-nav{display:flex;gap:32px}.ds-nav a{color:inherit;padding-block:10px;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:.5em;transition:text-decoration-color 200ms ease,text-underline-offset 200ms var(--ease-out)}.ds-nav a:hover{text-decoration-color:currentColor;text-underline-offset:.35em}.ds-bar-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 1.15em;background:var(--accent);color:var(--bg);font-weight:600;text-decoration:none}.ds-bar-gold .ds-bar-btn{background:var(--bg);color:var(--accent)}.ds-bar-btn:active{transform:scale(.97)}"
     },
@@ -367,9 +386,9 @@
       "name": "Hero Seam",
       "kind": "custom",
       "refersTo": null,
-      "description": "Headline crossing the black/gold seam, inked by difference blend so it reads gold on black and black on gold.",
-      "html": "<div class=\"ds-hero\"><div class=\"ds-top\"><h1 class=\"ds-seam\"><span class=\"ds-ink\">More revenue,</span><br><span class=\"ds-ink\">built in Kosovo.</span></h1></div><div class=\"ds-gold\"><p>Outbound sales and English-speaking talent from Kosovo.</p></div></div>",
-      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-hero{background:var(--bg);overflow:hidden}.ds-top{padding:48px 32px 0}.ds-seam{margin:0 0 -.62em;font:100 4.5rem/.95 Zodiak,Georgia,serif;letter-spacing:-.01em;text-transform:uppercase;color:#dcae63}.ds-ink{mix-blend-mode:difference}.ds-gold{background:var(--accent);color:var(--bg);padding:calc(4.5rem * .62 + 40px) 32px 48px;font:400 1.25rem/1.34 'Hanken Grotesk',system-ui,sans-serif}.ds-gold p{margin:0;max-width:36ch}"
+      "description": "Headline crossing the black/gold seam, inked by difference blend so it reads gold on black and black on gold; the 5:2 typing loop sits in the slot.",
+      "html": "<div class=\"ds-hero\"><div class=\"ds-top\"><h1 class=\"ds-seam\"><span class=\"ds-ink\">More meetings,</span><br><span class=\"ds-ink\">more</span> <span class=\"ds-slot\"></span> <span class=\"ds-ink\">capacity.</span></h1></div><div class=\"ds-gold\"><p>MG Revenue grows revenue two ways: outbound sales that books qualified meetings, and English-speaking talent from Kosovo that adds capacity to your team.</p></div></div>",
+      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-hero{background:var(--bg);overflow:hidden}.ds-top{padding:48px 32px 0}.ds-seam{margin:0 0 -.62em;font:100 4.5rem/.95 Zodiak,Georgia,serif;letter-spacing:-.01em;text-transform:uppercase;color:#dcae63}.ds-ink{mix-blend-mode:difference}.ds-slot{display:inline-block;width:2em;height:.86em;margin:0 .02em;vertical-align:-.08em;background:var(--panel2)}.ds-gold{background:var(--accent);color:var(--bg);padding:calc(4.5rem * .62 + 40px) 32px 48px;font:400 1.25rem/1.34 'Hanken Grotesk',system-ui,sans-serif}.ds-gold p{margin:0;max-width:36ch}"
     },
     {
       "name": "Sequence Card",
@@ -380,36 +399,52 @@
       "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-seq{margin:0;max-width:560px;padding-bottom:8px;background:var(--panel2);color:var(--ink);font:400 1rem/1.4 'Hanken Grotesk',system-ui,sans-serif;border-radius:0}.ds-seq-head{display:flex;justify-content:space-between;padding:18px 22px 14px}.ds-seq-head span{color:var(--muted);font-size:.875rem}.ds-seq ol{list-style:none;margin:0;display:grid;gap:2px;padding:0 10px}.ds-seq li{display:grid;grid-template-columns:3.2em 1fr auto;gap:12px;align-items:baseline;padding:12px;background:var(--panel)}.ds-seq li span:first-child,.ds-seq li span:last-child{color:var(--muted);font-variant-numeric:tabular-nums}.ds-seq li.ds-won{background:var(--accent);color:var(--bg);font-weight:600}.ds-seq li.ds-won span{color:var(--bg)}"
     },
     {
-      "name": "Segmented Currency Control",
-      "kind": "chip",
-      "refersTo": "segment-option",
-      "description": "Square, ink-bordered options on the gold field; selected option fills ground black with gold text.",
-      "html": "<div class=\"ds-field\"><fieldset class=\"ds-seg\"><label><input type=\"radio\" name=\"c\" checked><span>$</span></label><label><input type=\"radio\" name=\"c\"><span>€</span></label><label><input type=\"radio\" name=\"c\"><span>£</span></label></fieldset></div>",
-      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-field{background:var(--accent);color:var(--bg);padding:32px}.ds-seg{display:inline-flex;padding:0;margin:0;border:0}.ds-seg label{position:relative;cursor:pointer}.ds-seg input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}.ds-seg span{display:block;min-width:52px;padding:11px 12px;text-align:center;font:600 .875rem/1 'Hanken Grotesk',system-ui,sans-serif;border:1.5px solid var(--bg);margin-left:-1.5px;transition:transform 160ms var(--ease-out),background-color 200ms ease,color 200ms ease}.ds-seg input:checked+span{background:var(--bg);color:var(--accent)}.ds-seg label:active span{transform:translateY(1px) scale(.97)}.ds-seg input:focus-visible+span{outline:2px solid var(--bg);outline-offset:3px}"
+      "name": "Client Stepper",
+      "kind": "input",
+      "refersTo": "stepper-button",
+      "description": "Square ground-black buttons with SVG minus/plus around a Zodiak count, on gold; aria-disabled at 1 and 10.",
+      "html": "<div class=\"ds-field\"><div class=\"ds-stepper\" role=\"group\" aria-label=\"Clients\"><button class=\"ds-sb\" type=\"button\" aria-label=\"Remove a client\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14\"/></svg></button><span class=\"ds-n\">5</span><button class=\"ds-sb\" type=\"button\" aria-label=\"Add a client\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5v14\"/></svg></button><button class=\"ds-sb\" type=\"button\" aria-disabled=\"true\" aria-label=\"Add a client (at maximum)\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5v14\"/></svg></button></div></div>",
+      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-ico{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square}.ds-field{background:var(--accent);color:var(--bg);padding:32px}.ds-stepper{display:flex;align-items:center;gap:4px}.ds-sb{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:0;background:var(--bg);color:var(--accent);cursor:pointer;transition:transform 160ms var(--ease-out),background-color 200ms ease,color 200ms ease,opacity 200ms ease}.ds-sb .ds-ico{width:18px;height:18px;stroke-width:2}.ds-sb:active{transform:scale(.94)}.ds-sb:not([aria-disabled=true]):hover{background:var(--panel2);color:var(--accent2)}.ds-sb[aria-disabled=true]{opacity:.28;cursor:default}.ds-sb[aria-disabled=true]:active{transform:none}.ds-sb:focus-visible{outline:2px solid var(--bg);outline-offset:3px}.ds-n{min-width:2.1ch;text-align:center;font:400 1.5rem/1 Zodiak,Georgia,serif;font-variant-numeric:tabular-nums lining-nums}"
     },
     {
-      "name": "Ledger Figure",
+      "name": "Square Range",
+      "kind": "input",
+      "refersTo": null,
+      "description": "Spend slider on gold: 4px track of ground black at 28%, 26px square thumb that scales to 1.12 while pressed.",
+      "html": "<div class=\"ds-field\"><input class=\"ds-range\" type=\"range\" min=\"2500\" max=\"40000\" step=\"500\" value=\"20000\" aria-label=\"Monthly spend per client\"></div>",
+      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-field{background:var(--accent);padding:32px}.ds-range{width:100%;-webkit-appearance:none;appearance:none;height:44px;margin:0;background:transparent;cursor:pointer}.ds-range::-webkit-slider-runnable-track{height:4px;background:rgba(8,8,8,.28)}.ds-range::-moz-range-track{height:4px;background:rgba(8,8,8,.28)}.ds-range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-11px;background:var(--bg);border:0;transition:transform 160ms var(--ease-out)}.ds-range::-moz-range-thumb{width:26px;height:26px;background:var(--bg);border:0;border-radius:0;transition:transform 160ms var(--ease-out)}.ds-range:active::-webkit-slider-thumb{transform:scale(1.12)}.ds-range:active::-moz-range-thumb{transform:scale(1.12)}.ds-range:focus-visible{outline:2px solid var(--bg);outline-offset:4px}"
+    },
+    {
+      "name": "Calculator Sum",
       "kind": "custom",
       "refersTo": null,
-      "description": "Zodiak display figure set right against a Hanken caption, on gold.",
-      "html": "<div class=\"ds-field\"><div class=\"ds-led\"><span class=\"ds-fig\">10</span><span class=\"ds-fig\">%</span><span class=\"ds-cap\">lifetime revenue share on qualifying outsourcing introductions</span></div></div>",
-      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-field{background:var(--accent);color:var(--bg);padding:32px}.ds-led{display:grid;grid-template-columns:auto auto 1fr;align-items:baseline}.ds-fig{font:300 5rem/1 Zodiak,Georgia,serif;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums}.ds-cap{padding-left:24px;font:400 1rem/1.38 'Hanken Grotesk',system-ui,sans-serif;max-width:24ch}"
+      "description": "The question sentence resolving into one Zodiak display figure, with a yearly line beneath.",
+      "html": "<div class=\"ds-field\"><p class=\"ds-q\">If you introduce <b>5 outsourcing clients</b> who each spend <b>$20,000</b> a month with us, your 10% comes to</p><p class=\"ds-sum\"><span class=\"ds-fig\">$10,000</span> <span class=\"ds-per\">a month</span></p><p class=\"ds-year\">$120,000 a year, for as long as they stay.</p></div>",
+      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-field{background:var(--accent);color:var(--bg);padding:32px;font:400 1.125rem/1.55 'Hanken Grotesk',system-ui,sans-serif}.ds-field p{margin:0}.ds-q{font-size:1.5rem;line-height:1.35;max-width:34ch}.ds-q b{font-weight:600;font-variant-numeric:tabular-nums}.ds-sum{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .35em;margin-top:18px}.ds-fig{font:300 5.5rem/.92 Zodiak,Georgia,serif;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums}.ds-per{font-size:1.5rem}.ds-year{margin-top:12px}"
+    },
+    {
+      "name": "The $10,000 Line",
+      "kind": "custom",
+      "refersTo": "line-block",
+      "description": "One solid ground-black block per client, 2px gaps of gold; pale blocks for clients still needed; marker with a down arrow at the target.",
+      "html": "<div class=\"ds-field\"><div class=\"ds-mark\"><span class=\"ds-goal\">$10,000 a month<svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 12h17M14 6l6 6-6 6\"/></svg></span></div><div class=\"ds-bar\" style=\"--w:12.5%\"><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i></i><i></i><i></i><i></i><i></i></div><p class=\"ds-say\">5 more clients of this size take you to $10,000 a month.</p><p class=\"ds-key\">Each block is one client paying you $1,250 a month. Illustrative figures, not a quote.</p></div>",
+      "css": ":host{--bg:#080808;--panel:#0f0f10;--panel2:#121214;--ink:#f4f3ef;--muted:#a7a6a1;--accent:#d4a65b;--accent2:#f0c981;--ease-out:cubic-bezier(.23,1,.32,1)}.ds-ico{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square}.ds-field{background:var(--accent);color:var(--bg);padding:32px;font:400 1.125rem/1.55 'Hanken Grotesk',system-ui,sans-serif}.ds-field p{margin:0}.ds-mark{display:flex;justify-content:flex-end;margin-bottom:10px}.ds-goal{display:inline-flex;align-items:center;gap:.4em;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}.ds-goal .ds-ico{transform:rotate(90deg)}.ds-bar{display:flex;height:72px;overflow:hidden}.ds-bar i{flex:none;width:calc(var(--w) - 2px);margin-right:2px;background:rgba(8,8,8,.13);transition:background-color 140ms ease}.ds-bar i.on{background:var(--bg);transition-duration:220ms}.ds-say{margin-top:22px;font-size:1.5rem;line-height:1.34;max-width:40ch}.ds-key{margin-top:10px;font-size:.875rem}"
     }
   ],
   "narrative": {
     "northStar": "The Gold Field and the Black Field",
-    "overview": "**Creative North Star: \"The Gold Field and the Black Field\"**\n\nMG Revenue is set as a sequence of chapters, each one a single flat field of colour running the full width of the screen: near-black, a slightly lifted panel black, champagne gold, and finally warm off-white. Inside those fields, type does the work. A hairline Zodiak serif carries the large statements at poster scale and Hanken Grotesk carries everything that has to be read. The page opens with a black field above a gold field. The headline crosses the seam between them and changes ink as it goes. A credited photograph of Prishtina sits inside the sentence where a word would be.\n\nThe density is low and the scale contrast is high. Big display lines, generous section padding and a 12-column grid that places blocks off-centre, never as a stack of centred cards. Depth comes from changing fields and from tone steps between near-blacks. The system has no shadows, gradients, glows or rounded corners. Gold is a material used in whole fields and solid blocks, not as a thin accent. The photographs all share one warm monochrome treatment, so Prishtina reads as one place in one light.\n\nThe direction contract rejects the dark-agency template: glowing orbs, icon cards and a centred hero.",
+    "overview": "**Creative North Star: \"The Gold Field and the Black Field\"**\n\nMG Revenue is set as a sequence of chapters, each one a single flat field of colour running the full width of the screen: near-black, a slightly lifted panel black, champagne gold, and finally warm off-white. Inside those fields, type does the work. A hairline Zodiak serif carries the large statements at poster scale and Hanken Grotesk carries everything that has to be read. The page opens with a black field above a gold field. The headline crosses the seam between them and changes ink as it goes. A short loop of hands typing sits inside the sentence where a word would be.\n\nThe density is low and the scale contrast is high. Big display lines, generous section padding and a 12-column grid that places blocks off-centre, never as a stack of centred cards. Depth comes from changing fields and from tone steps between near-blacks. The system has no shadows, gradients, glows or rounded corners. Gold is a material used in whole fields and solid blocks, not as a thin accent; on the gold field, figures are counted out in solid blocks of ground black. The photographs are credited open-licence pictures of people at work, all in one warm colour grade that keeps warm hues and quiets cool ones, so pictures from different sources read as one set in one light.\n\nThe direction contract rejects the dark-agency template: glowing orbs, icon cards and a centred hero.",
     "keyCharacteristics": [
       "One flat, full-bleed field per chapter; the fixed bar takes the tone of the chapter beneath it.",
-      "Owner-fixed palette of near-blacks, warm ink and three golds; no other hues.",
+      "Owner-fixed palette of near-blacks, warm ink and three golds; no other hues in the interface (photographs keep their own graded colour).",
       "Zodiak hairline capitals for the hero only; Zodiak light for headings and figures; Hanken Grotesk for reading text.",
-      "Square corners, flat fills, no shadows at rest.",
-      "Warm-monochrome, credited photographs of Prishtina, never passed off as the company's own office or team."
+      "Square corners, flat fills, no shadows at rest. Quantities are shown as solid square blocks separated by gaps, not as charts.",
+      "Warm-graded, credited photographs of people at work, never passed off as the company's own office, team or clients."
     ],
     "rules": [
       {
         "name": "The Fixed Palette Rule",
-        "body": "The nine palette values are the owner's. Don't add hues, derive tints for new surfaces, or nudge a value for contrast. If something fails contrast, change which palette value goes on which field.",
+        "body": "The ten values above are the whole palette. Don't add hues, derive tints for new surfaces, or nudge a value for contrast. If something fails contrast, change which palette value goes on which field. The one sanctioned derivation is ground black at reduced strength on the gold field, for marks that must sit quieter than solid ink: the range track (28%), the partner flow dashes (55%), the disabled stepper button (opacity 0.28) and the pale \"still needed\" blocks of the $10,000 line (13%). These are states and tracks, never surfaces, and never the only carrier of information: the pale blocks are always restated in words beneath the bar. Photographs are not palette: they keep their own colour, but only through the shared grade (see Imagery), which holds cool hues down so no picture brings in a competing accent.",
         "section": "colors"
       },
       {
@@ -429,7 +464,7 @@
       },
       {
         "name": "The Two Voices Rule",
-        "body": "Zodiak makes statements: headings, figures, entry links, the wordmark, the phone menu links. Hanken explains: everything else. Never set a paragraph in Zodiak or a heading in Hanken. The one exception is the small closing-column heading \"Bringing us a client?\", which is set as body text at weight 500.",
+        "body": "Zodiak makes statements: headings, figures, entry links, the wordmark, the phone menu links, the stepper count. Hanken explains: everything else. Never set a paragraph in Zodiak or a heading in Hanken. The one exception is the small closing-column heading \"Bringing us a client?\", which is set as body text at weight 500.",
         "section": "typography"
       },
       {
@@ -438,8 +473,13 @@
         "section": "typography"
       },
       {
+        "name": "The Sentence Resolves Rule",
+        "body": "A calculation is written as a sentence that ends in its answer: a lead-size question with live values in weight 600, then one display figure. Supporting numbers follow in body text beneath it. Never set a calculation as a table, a ledger of several display figures or a chart with axes.",
+        "section": "typography"
+      },
+      {
         "name": "The Off-Centre Rule",
-        "body": "Never centre a chapter's composition. Every block is placed on the 12-column grid against an edge, offset from the others.",
+        "body": "Never centre a chapter's composition. Every block is placed on the 12-column grid against an edge, offset from the others. The only element centred on an axis is the settled logo, centred vertically in the bar.",
         "section": "layout"
       },
       {
@@ -448,13 +488,18 @@
         "section": "elevation"
       },
       {
-        "name": "The No-Rule Rule",
-        "body": "Never separate content with hairlines, borders or divider rules. Separation comes from space, from a field change or from a tone step. The Line colour is reserved for interface fragments marked `data-ui`. These strokes are part of the world and stay allowed: 1px link underlines; the 1.5px ink border of the segmented control; 2px ink dashes at 55% opacity linking the partner flow steps; the 4px range track in ground black at 28% opacity.",
+        "name": "The Block Count Rule",
+        "body": "When something is counted, draw one solid square-cornered block per unit, all the same width, separated by 2px gaps of the field beneath. A block is either solid ink (counted) or pale ink (still needed). No outlines, no labels inside blocks, no rounded ends.",
         "section": "shapes"
       },
       {
-        "name": "The Honest Place Rule",
-        "body": "Photographs show Prishtina as a place. Never caption, crop or position one so it reads as MG Revenue's office, team, clients or work. Every new image goes through the same treatment script and is credited.",
+        "name": "The No-Rule Rule",
+        "body": "Never separate content with hairlines, borders or divider rules. Separation comes from space, from a field change, from a tone step or from a gap that lets the field show through. The Line colour is reserved for interface fragments marked `data-ui`. These strokes are part of the world and stay allowed: 1px link underlines; 2px ink dashes at 55% opacity linking the partner flow steps; the 4px range track in ground black at 28% opacity.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Honest People Rule",
+        "body": "Photographs show anonymous people at work somewhere else. Never caption, crop or position one so it reads as MG Revenue's office, team, clients or work: no names, no \"our\", no \"the team\". Every new image comes from an open-licence source, goes through the same treatment script and is credited.",
         "section": "components"
       }
     ],
@@ -463,19 +508,21 @@
       "Do use gold as a whole field or a solid block, and set all ink and controls on gold in ground black.",
       "Do set statements in Zodiak 300 at the headline step and reading text in Hanken at the body or lead step, sentence case.",
       "Do keep every corner square (0px) and every fill flat.",
-      "Do separate content with space, a field change or a tone step between ground, panel and raised panel.",
-      "Do give controls a press response (scale 0.97 over 160ms) and restrict hover effects to fine pointers.",
-      "Do run new photographs through the warm monochrome treatment (#0b0a08 to #f4efe4), caption the place and credit the source.",
+      "Do separate content with space, a field change, a tone step between ground, panel and raised panel, or a 2px gap of the field.",
+      "Do write a calculation as a sentence that resolves into one display figure, and show a count as one solid block per unit.",
+      "Do give controls a press response (scale 0.97 over 160ms; 0.94 for stepper buttons) and restrict hover effects to fine pointers.",
+      "Do run new photographs through the shared colour grade in .taste-skill/build-assets.sh, never a one-off adjustment per picture; caption the place or the activity and credit the source.",
       "Do keep the hero's gold block free of position, transform, opacity, isolation and filter."
     ],
     "donts": [
-      "Don't add, tint or adjust any colour outside the owner's palette.",
+      "Don't add, tint or adjust any colour outside the owner's palette; ground black at reduced strength on gold, for tracks and states, is the only derivation.",
       "Don't use glowing orbs, icon cards or a centred hero.",
       "Don't add eyebrows or kickers (small labels above headings), and don't number sections or steps. The process reads in order by its staircase indent.",
       "Don't draw divider rules or card borders outside interface fragments marked `data-ui`.",
       "Don't add shadows, gradients, blur or rounded corners.",
       "Don't set anything in capitals except the hero headline and the closing wordmark, and don't use Zodiak weight 100 anywhere but the hero at 1200px and wider.",
-      "Don't present a photograph as MG Revenue's own office, team, clients or work, and don't invent clients, statistics, logos or testimonials to fill a layout."
+      "Don't present a photograph as MG Revenue's own office, team, clients or work, and don't invent clients, statistics, logos or testimonials to fill a layout.",
+      "Don't present calculator output as a quote: keep it in US dollars, label it illustrative, and keep the share to qualifying outsourcing introductions for as long as the client stays."
     ]
   }
 }

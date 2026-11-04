@@ -44,8 +44,9 @@ A Kosovo-based revenue and outsourcing company. Kosovo gives access to a young, 
 
 - The logo only. No photographs of the team, office or work.
 - No client names, logos, testimonials, case studies, statistics or press. Do not invent any.
-- The only figure that is a real commitment: **10% lifetime revenue share on qualifying outsourcing introductions**.
-- Imagery approved by the owner: commercially-licensed open photographs of Prishtina/Kosovo, credited, and never presented as MG Revenue's own office, team or clients.
+- The only figure that is a real commitment: **10% lifetime revenue share on qualifying outsourcing introductions**, paid for as long as the introduced client stays.
+- Partner calculator inputs set by the owner (2026-11-04): a client's monthly spend runs from **$2,500 to $40,000**; the page shows how several clients add up to **$10,000 a month** for the partner. These are illustrative ranges, not quotes.
+- Imagery approved by the owner (changed 2026-11-04): commercially-licensed open photographs of **people at work**, credited, and never presented as MG Revenue's own office, team or clients. (Previously Prishtina architecture.)
 
 ## Product Principles
 

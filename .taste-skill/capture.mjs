@@ -16,7 +16,7 @@ for (let i = 0; i < 50 && !target; i++) {
   try { target = (await (await fetch(`http://127.0.0.1:${port}/json`)).json()).find((t) => t.type === 'page'); } catch {}
   if (!target) await sleep(200);
 }
-const ws = new WebSocket(target.webSocketDebuggerUrl);
+const ws = new (globalThis.WebSocket)(target.webSocketDebuggerUrl);
 await new Promise((r) => ws.addEventListener('open', r, { once: true }));
 let seq = 0; const pending = new Map();
 ws.addEventListener('message', (e) => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id); } });

@@ -11,9 +11,9 @@
 <link rel="icon" type="image/png" href="mg-revenue-logo.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mgrevenue.com/">
-<meta property="og:title" content="MG Revenue — More revenue, built in Kosovo">
+<meta property="og:title" content="MG Revenue — More meetings, more capacity">
 <meta property="og:description" content="Outbound sales that books qualified conversations, and English-speaking talent from Kosovo that extends your team.">
-<meta property="og:image" content="https://mgrevenue.com/assets/img/library-1100.jpg">
+<meta property="og:image" content="https://mgrevenue.com/assets/img/calls-1100.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script>if('IntersectionObserver' in window)document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=zodiak@100,300,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/domes-poster.jpg">
+<link rel="preload" as="image" href="assets/img/typing-poster.jpg">
 <style>
 /* ── Tokens ─────────────────────────────────────────────── */
 :root{
@@ -44,13 +44,19 @@
   --bar-h:72px;
   --section:clamp(104px,13vw,208px);
 
+  /* The logo is large at the top of the page and settles to --logo-k of that
+     size once the page scrolls. --logo-top centres the settled logo in the bar. */
+  --logo-h:80px;
+  --logo-k:.7;
+  --logo-top:calc((var(--bar-h) - var(--logo-h) * var(--logo-k)) / 2);
+
   --ease-out:cubic-bezier(.23,1,.32,1);
   --ease-expo:cubic-bezier(.16,1,.3,1);
   --ease-in-out:cubic-bezier(.77,0,.175,1);
   --ease-drawer:cubic-bezier(.32,.72,0,1);
   --t-press:160ms; --t-hover:200ms;
 }
-@media (max-width:860px){:root{--bar-h:64px}}
+@media (max-width:860px){:root{--bar-h:64px;--logo-h:60px;--logo-k:.77}}
 
 /* ── Base ───────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box}
@@ -97,8 +103,9 @@ p{text-wrap:pretty}
 .bar[data-tone=gold]{background:var(--accent);color:var(--bg)}
 .bar[data-tone=light]{background:var(--ink);color:var(--bg)}
 .bar__in{height:100%;display:flex;align-items:center;gap:clamp(16px,2.6vw,44px)}
-.bar__brand{display:block;flex:none;margin-right:auto}
-.bar__brand img{height:calc(var(--bar-h) - 22px);width:auto;transition:filter 300ms ease}
+.bar__brand{display:block;flex:none;margin-right:auto;align-self:flex-start;margin-top:var(--logo-top);transform-origin:0 0;transition:transform 320ms var(--ease-out)}
+.bar__brand img{height:var(--logo-h);width:auto;transition:filter 300ms ease}
+.bar.is-compact .bar__brand{transform:scale(var(--logo-k))}
 .bar[data-tone=gold] .bar__brand img,.bar[data-tone=light] .bar__brand img{filter:brightness(0)}
 .bar__nav{display:flex;gap:clamp(20px,2.4vw,40px)}
 .bar__nav a{font-size:1rem;font-weight:500;text-decoration:none;padding-block:10px;text-decoration-line:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:.5em;transition:text-decoration-color var(--t-hover) ease,text-underline-offset var(--t-hover) var(--ease-out)}
@@ -115,7 +122,8 @@ p{text-wrap:pretty}
 @starting-style{.sheet[open]{opacity:0;transform:translateY(-14px)}}
 .sheet.is-closing{opacity:0;transform:translateY(-8px);transition-duration:180ms}
 .sheet__top{height:var(--bar-h);display:flex;align-items:center;justify-content:space-between}
-.sheet__top img{height:calc(var(--bar-h) - 22px);width:auto}
+.sheet__brand{align-self:flex-start;margin-top:var(--logo-top);height:var(--logo-h);width:auto;transform-origin:0 0}
+.sheet.is-compact .sheet__brand{transform:scale(var(--logo-k))}
 .sheet__nav{padding-block:clamp(32px,8vh,72px) 40px}
 .sheet__nav a{display:block;padding-block:.12em;font-family:var(--display);font-weight:300;font-size:clamp(2.5rem,11vw,4rem);line-height:1.1;letter-spacing:-.015em;text-decoration:none}
 .sheet__mail{display:grid;gap:14px;padding-bottom:40px}
@@ -210,11 +218,25 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
 .flow li{display:inline-flex;align-items:center;gap:14px}
 .flow li:not(:last-child)::after{content:"";width:22px;height:2px;background:currentColor;opacity:.55}
 .partners__copy .btn{justify-self:start}
-.est{grid-column:8/-1;display:grid;gap:22px}
-.est__q{font-size:var(--step-lead);line-height:1.35;max-width:22ch}
+/* The question reads as one sentence that resolves into the figure; the controls sit
+   under it, between the two places their result shows (the figure and the line). */
+.est{grid-column:8/-1;display:grid;gap:18px;align-content:start}
+.est__q{font-size:var(--step-lead);line-height:1.35;max-width:34ch;text-wrap:balance}
 .est__q output{font-weight:600;font-variant-numeric:tabular-nums}
-.est__ctrl{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center}
-.range{flex:1 1 220px;-webkit-appearance:none;appearance:none;height:44px;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
+.est__sum{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .35em}
+.est__fig{font-family:var(--display);font-weight:300;font-size:clamp(3.25rem,6.6vw,6.75rem);line-height:.92;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums}
+.est__per{font-size:var(--step-lead)}
+.est__year{margin-top:-6px}
+.est__ctrl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 28px;align-items:center;margin-top:10px}
+.stepper{display:flex;align-items:center;gap:4px}
+.stepper__b{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:0;background:var(--bg);color:var(--accent);cursor:pointer;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease,color var(--t-hover) ease,opacity var(--t-hover) ease}
+.stepper__b .ico{width:18px;height:18px;stroke-width:2}
+.stepper__b:active{transform:scale(.94)}
+.stepper__b[aria-disabled=true]{opacity:.28;cursor:default}
+.stepper__b[aria-disabled=true]:active{transform:none}
+.stepper__n{min-width:2.1ch;text-align:center;font-family:var(--display);font-weight:400;font-size:var(--step-lead);line-height:1;font-variant-numeric:tabular-nums lining-nums}
+@media (hover:hover) and (pointer:fine){.stepper__b:not([aria-disabled=true]):hover{background:var(--panel2);color:var(--accent2)}}
+.range{width:100%;-webkit-appearance:none;appearance:none;height:44px;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
 .range::-webkit-slider-runnable-track{height:4px;background:rgba(8,8,8,.28)}
 .range::-moz-range-track{height:4px;background:rgba(8,8,8,.28)}
 .range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-11px;background:var(--bg);border:0;transition:transform var(--t-press) var(--ease-out)}
@@ -222,19 +244,23 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
 .range:active::-webkit-slider-thumb{transform:scale(1.12)}
 .range:active::-moz-range-thumb{transform:scale(1.12)}
 .range:focus-visible{outline:2px solid var(--bg);outline-offset:4px}
-.seg{display:inline-flex;padding:0;border:0;min-inline-size:0}
-.seg label{position:relative;cursor:pointer}
-.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.seg span{display:block;min-width:52px;padding:11px 12px;text-align:center;font-size:.875rem;font-weight:600;border:1.5px solid var(--bg);margin-left:-1.5px;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease,color var(--t-hover) ease} /* taste-skill-ignore: form control */
-.seg input:checked + span{background:var(--bg);color:var(--accent)}
-.seg label:active span{transform:translateY(1px) scale(.97)}
-.seg input:focus-visible + span{outline:2px solid var(--bg);outline-offset:3px}
-.ledger{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.15fr);column-gap:0;row-gap:18px;margin-top:8px}
-.ledger li{display:grid;grid-column:1/-1;grid-template-columns:subgrid;align-items:baseline}
-.ledger li[hidden]{display:none}
-.fig{grid-column:1;justify-self:end;font-family:var(--display);font-weight:300;font-size:clamp(3.25rem,6.6vw,6.75rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums}
-.fig-u{grid-column:2;font-family:var(--display);font-weight:300;font-size:clamp(3.25rem,6.6vw,6.75rem);line-height:1;letter-spacing:-.02em}
-.fig-c{grid-column:3;padding-left:clamp(16px,1.8vw,28px);font-size:1rem;line-height:1.38;max-width:calc(24ch + 28px)}
+/* The $10,000 line. Each block is one client of the chosen size. Below the line, solid
+   blocks are the clients introduced and pale blocks the ones still needed; past it, the
+   bar rescales so every client stays visible and the marker shows where $10,000 falls.
+   Every block is the same width, so one custom property (--w) sizes them all. */
+.tenk{grid-column:1/-1;margin-top:clamp(8px,2vw,32px)}
+.tenk__mark{position:relative;height:1.6em;margin-bottom:10px}
+.tenk__goal{position:absolute;bottom:0;left:min(calc(var(--g,100%) + .5em),100%);transform:translateX(-100%);display:inline-flex;align-items:center;gap:.4em;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tenk__goal .ico{transform:rotate(90deg)}
+.tenk__goal.is-left{left:calc(var(--g) - .5em);transform:none;flex-direction:row-reverse}
+.tenk__bar{--w:20%;display:flex;height:clamp(56px,6vw,96px);overflow:hidden}
+.tenk__bar i{flex:none;width:calc(var(--w) - 2px);margin-right:2px;background:rgba(8,8,8,.13);transform-origin:0 50%;transition:background-color 140ms ease}
+.tenk__bar i.is-on{background:var(--bg);transition-duration:220ms}
+.tenk__bar i[hidden]{display:none}
+.tenk__bar.is-pending i{transform:scaleX(0)}
+.tenk__bar.is-pending i:not(.is-on){transform:none;opacity:0}
+.tenk__say{margin-top:22px;font-size:var(--step-lead);line-height:1.34;max-width:40ch}
+.tenk__key{margin-top:10px;font-size:var(--step-small);max-width:60ch}
 
 /* ── About ─────────────────────────────────────────────── */
 .about__grid{align-items:start}
@@ -293,7 +319,7 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
 @keyframes rise{from{box-shadow:inset 0 30vh 0 0 var(--bg)}to{box-shadow:inset 0 0 0 0 var(--bg)}} /* taste-skill-ignore: load-only curtain, never at rest */
 @keyframes open{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
 @keyframes load{from{opacity:0;transform:translateY(14px)}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sheet{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sheet,.bar__brand{transition:none}}
 
 /* ── Laptop ────────────────────────────────────────────── */
 @media (max-width:1280px){
@@ -356,13 +382,11 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
   .step:nth-child(4){padding-left:18vw}
   .step p{font-size:1rem}
 
-  .est__ctrl{flex-wrap:nowrap;gap:16px}
-  .range{flex:1 1 auto;min-width:0}
-  .ledger{grid-template-columns:minmax(0,52fr) minmax(0,48fr)}
-  .ledger li{row-gap:6px}
-  .fig,.fig-u{font-size:15vw}
-  .fig-u{grid-column:2;justify-self:start}
-  .fig-c{grid-column:1/-1;padding-left:0;font-size:1rem}
+  /* Phones: the stepper on its own row, the slider full width under it. */
+  .est__ctrl{grid-template-columns:minmax(0,1fr)}
+  .est__fig{font-size:15vw}
+  .tenk__bar{height:48px}
+  .tenk__say{font-size:1.25rem;line-height:1.36}
 
   .about__p{font-size:1.25rem;line-height:1.36}
   .about__text,.about__pic{grid-column:1/-1}
@@ -377,6 +401,8 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
 <body>
 <svg width="0" height="0" aria-hidden="true" style="position:absolute">
   <symbol id="arrow" viewBox="0 0 24 24"><path d="M3 12h17M14 6l6 6-6 6"/></symbol>
+  <symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
 </svg>
 
 <a class="skip" href="#main">Skip to content</a>
@@ -398,7 +424,7 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
 <dialog class="sheet" id="menu" aria-label="Menu">
   <div class="wrap">
     <div class="sheet__top">
-      <img src="mg-revenue-logo.png" alt="MG Revenue" width="266" height="217">
+      <img class="sheet__brand" src="mg-revenue-logo.png" alt="MG Revenue" width="266" height="217">
       <button class="bar__menu sheet__close" type="button" style="display:inline-flex">Close</button>
     </div>
     <nav class="sheet__nav" aria-label="Menu">
@@ -418,11 +444,11 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
 
 <section class="hero" id="top" data-tone="dark" aria-labelledby="hero-h">
   <div class="wrap hero__top">
-    <h1 class="seam" id="hero-h"><span class="ink l1">More revenue,</span><br><span class="l2"><span class="ink">built in</span> <span class="slot" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" disablepictureinpicture disableremoteplayback poster="assets/img/domes-poster.jpg" width="720" height="288"><source src="assets/img/domes.mp4" type="video/mp4"><source src="assets/img/domes.webm" type="video/webm"></video></span> <span class="ink">Kosovo.</span></span></h1>
+    <h1 class="seam" id="hero-h"><span class="ink l1">More meetings,</span><br><span class="l2"><span class="ink">more</span> <span class="slot" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" disablepictureinpicture disableremoteplayback poster="assets/img/typing-poster.jpg" width="720" height="288"><source src="assets/img/typing.mp4" type="video/mp4"><source src="assets/img/typing.webm" type="video/webm"></video></span> <span class="ink">capacity.</span></span></h1>
   </div>
   <div class="hero__gold" data-tone="gold">
     <div class="wrap hero__lead">
-      <p data-load style="--d:650ms">MG Revenue grows revenue two ways: outbound sales that books qualified conversations, and English‑speaking talent from Kosovo that extends your team.</p>
+      <p data-load style="--d:650ms">MG Revenue grows revenue two ways: outbound sales that books qualified meetings, and English‑speaking talent from Kosovo that adds capacity to your team.</p>
       <a class="btn btn--ink" href="mailto:contact@mgrevenue.com" data-load style="--d:760ms">Let’s talk<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
     </div>
     <nav class="doors" aria-label="Where to start">
@@ -485,8 +511,8 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
         <p class="muted">Our outsourcing model works as a team extension: practical, flexible and built around the role you actually need.</p>
       </div>
         <figure class="talent__pic">
-        <img src="assets/img/boulevard-1200.jpg" width="1200" height="800" alt="People walking down a wide pedestrian boulevard under strung banners on a winter day" loading="lazy" decoding="async">
-        <figcaption class="cap">Mother Teresa Boulevard, Prishtina.</figcaption>
+        <img src="assets/img/team-1200.jpg" width="1200" height="800" alt="Two people at a long shared desk by tall windows, one typing on a laptop, the other turned toward the light" loading="lazy" decoding="async">
+        <figcaption class="cap">A shared desk, Prague.</figcaption>
       </figure>
       </div>
       <p class="talent__name" aria-hidden="true">Roles</p>
@@ -525,7 +551,7 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
     <div class="partners__copy">
       <h2 class="head" id="partners-h" data-reveal>Introduce a client.<br> <span>Earn a lifetime share.</span></h2>
       <p class="lead" data-reveal style="--i:1">We work with Fractional CFOs, Fractional COOs, consultants, advisors and other professionals who serve growing companies.</p>
-      <p data-reveal style="--i:2">Introduce a client that needs sales or outsourcing support. We take it from there.</p>
+      <p data-reveal style="--i:2">Introduce a client that needs sales or outsourcing support. We take it from there. On qualifying outsourcing introductions, you earn 10% of what the client pays us, for as long as they stay.</p>
       <ol class="flow" aria-label="How partnership works" data-reveal style="--i:3">
         <li>Introduce</li><li>We connect</li><li>Client gets support</li><li>You earn</li>
       </ol>
@@ -533,23 +559,26 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
     </div>
 
     <div class="est" data-reveal style="--i:2">
-      <p class="est__q" id="est-q">If a client you introduce spends <output id="spend-out" for="spend">$4,000</output> a month with us</p>
+      <p class="est__q" id="est-q">If you introduce <output id="clients-out" for="clients">5 outsourcing clients</output> <span data-out="who">who each spend</span> <output id="spend-out" for="spend">$20,000</output> a month with us, your 10% comes to</p>
+      <p class="est__sum"><span class="est__fig" data-out="monthly">$10,000</span> <span class="est__per">a month</span></p>
+      <p class="est__year"><span data-out="yearly">$120,000</span> a year, for as long as they stay.</p>
       <div class="est__ctrl">
-        <input class="range" id="spend" type="range" min="500" max="25000" step="500" value="4000" aria-labelledby="est-q">
-        <fieldset class="seg">
-          <legend class="vh">Currency</legend>
-          <label><input type="radio" name="cur" value="USD" aria-label="US dollars" checked><span aria-hidden="true">$</span></label>
-          <label><input type="radio" name="cur" value="EUR" aria-label="Euros"><span aria-hidden="true">€</span></label>
-          <label><input type="radio" name="cur" value="GBP" aria-label="Pounds sterling"><span aria-hidden="true">£</span></label>
-        </fieldset>
+        <div class="stepper" id="clients" role="group" aria-label="Outsourcing clients you introduce">
+          <button class="stepper__b" type="button" data-step="-1" aria-label="Remove a client"><svg class="ico" aria-hidden="true"><use href="#minus"/></svg></button>
+          <span class="stepper__n" data-out="clients" aria-hidden="true">5</span>
+          <button class="stepper__b" type="button" data-step="1" aria-label="Add a client"><svg class="ico" aria-hidden="true"><use href="#plus"/></svg></button>
+        </div>
+        <input class="range" id="spend" type="range" min="2500" max="40000" step="500" value="20000" aria-label="Monthly spend per client, in US dollars">
       </div>
-      <ul class="ledger" aria-live="polite">
-        <li><span class="fig">10</span><span class="fig-u">%</span><span class="fig-c">lifetime revenue share on qualifying outsourcing introductions</span></li>
-        <li><span class="fig" data-out="monthly">400</span><span class="fig-u" aria-hidden="true"></span><span class="fig-c"><span data-cur-name>US dollars</span> to you each month</span></li>
-        <li><span class="fig" data-out="yearly">4,800</span><span class="fig-u" aria-hidden="true"></span><span class="fig-c"><span data-cur-name>US dollars</span> to you each year</span></li>
-        <li data-row="projection" hidden><span class="fig" data-out="projection"></span><span class="fig-u" aria-hidden="true"></span><span class="fig-c" data-out="projection-caption"></span></li>
-      </ul>
     </div>
+
+    <div class="tenk" data-reveal style="--i:3">
+      <div class="tenk__mark" aria-hidden="true"><span class="tenk__goal">$10,000 a month<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></span></div>
+      <div class="tenk__bar" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i></div>
+      <p class="tenk__say" data-out="say">5 clients of this size reach the line. Each one after that adds $2,000 a month.</p>
+      <p class="tenk__key"><span data-out="key">Each block is one client paying you $2,000 a month.</span> Illustrative figures, not a quote.</p>
+    </div>
+    <p class="vh" aria-live="polite" data-out="live"></p>
   </div>
 </section>
 
@@ -566,15 +595,15 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
       <p class="about__p" data-reveal style="--i:2">Our approach is straightforward: understand what the business needs, build the right solution, and execute with consistency.</p>
     </div>
     <figure class="about__pic" data-reveal style="--i:2">
-      <img src="assets/img/dardania-560.jpg" width="560" height="560" alt="Prishtina's Dardania neighbourhood seen from above, apartment blocks and a busy ring road" loading="lazy" decoding="async">
-      <figcaption class="cap">Dardania, Prishtina, from above.</figcaption>
+      <img src="assets/img/session-720.jpg" width="720" height="720" alt="Two people's hands across a wooden table, one writing in a notebook, with coffee, a phone and a tablet between them" loading="lazy" decoding="async">
+      <figcaption class="cap">A working session.</figcaption>
     </figure>
   </div>
   <figure class="band">
     <div class="band__frame" data-reveal>
-      <img src="assets/img/library-1920.jpg" srcset="assets/img/library-1100.jpg 1100w, assets/img/library-1920.jpg 1920w" sizes="100vw" width="1920" height="823" alt="The National Library of Kosovo, a concrete building wrapped in a metal lattice and crowned with white domes, behind tall poplars" loading="lazy" decoding="async">
+      <img src="assets/img/calls-1920.jpg" srcset="assets/img/calls-1100.jpg 1100w, assets/img/calls-1920.jpg 1920w" sizes="100vw" width="1920" height="823" alt="Two people in headsets working at their screens in a row of desks, notes pinned to the dividers" loading="lazy" decoding="async">
     </div>
-    <figcaption class="cap wrap">National Library of Kosovo, Prishtina.</figcaption>
+    <figcaption class="cap wrap">A contact centre, Buenos Aires.</figcaption>
   </figure>
 </section>
 
@@ -588,8 +617,8 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
       <a class="btn btn--ink" href="mailto:contact@mgrevenue.com" data-reveal style="--i:2">contact@mgrevenue.com<svg class="ico" aria-hidden="true"><use href="#arrow"/></svg></a>
     </div>
     <figure class="close__pic" data-reveal style="--i:2">
-      <img src="assets/img/newborn-640.jpg" width="640" height="640" alt="The NEWBORN letters monument in Prishtina, lit at night" loading="lazy" decoding="async">
-      <figcaption>Newborn monument, Prishtina.</figcaption>
+      <img src="assets/img/laptop-640.jpg" width="640" height="640" alt="A woman in a jacket working at a laptop in low light, her face out of frame" loading="lazy" decoding="async">
+      <figcaption>At the laptop.</figcaption>
     </figure>
     <div class="close__links" data-reveal style="--i:3">
       <h2>Bringing us a client?</h2>
@@ -602,7 +631,7 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
   </div>
   <div class="wrap close__legal">
     <span>© 2026 MG Revenue SH.P.K. · Sales, outsourcing and partnerships</span>
-    <p>Photographs and film from Wikimedia Commons, cropped and toned to monochrome: <a href="https://commons.wikimedia.org/wiki/File:National_Library_of_Kosovo_video_from_the_drone.webm">National Library of Kosovo video from the drone</a> by Arianit (CC BY‑SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Mother_Teresa_Boulevard_10th_anniversary.jpg">Mother Teresa Boulevard 10th anniversary</a> by Albinfo (CC0); <a href="https://commons.wikimedia.org/wiki/File:Dardania_neighbhorhood_Prishtina.JPG">Dardania neighbourhood Prishtina</a> by Arianit Dobroshi (CC BY‑SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Prishtina_Public_Library.jpg">Prishtina Public Library</a> by Avocados2026 (CC BY‑SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:NEWBORN_monument_in_Pristina,_2025_repainting,_by_night.jpg">NEWBORN monument in Pristina, 2025 repainting, by night</a> by Bdx (CC0). <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY‑SA 4.0 licence</a>.</p>
+    <p>Photographs and film from Wikimedia Commons, cropped and colour graded: <a href="https://commons.wikimedia.org/wiki/File:Hunt_and_peck_typing_%E2%80%94_Monkeytype_benchmark.webm">Hunt and peck typing — Monkeytype benchmark</a> by C40115 (CC BY 4.0); <a href="https://commons.wikimedia.org/wiki/File:Iterait.jpg">Iterait</a> by Domcapo (CC BY‑SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Two_people_meeting_with_iphone_and_ipad_(Unsplash).jpg">Two people meeting with iPhone and iPad</a> by Alejandro Escamilla (CC0); <a href="https://commons.wikimedia.org/wiki/File:DefPuebloCABA_-_Centro_de_contacto.jpg">DefPuebloCABA – Centro de contacto</a> by Defensoría del Pueblo de la Ciudad de Buenos Aires (CC BY‑SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Businesswoman_working_at_table_(Unsplash).jpg">Businesswoman working at table</a> by rawpixel.com (CC0). Licences: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY‑SA 4.0</a>.</p>
   </div>
   <p class="close__mark" aria-hidden="true">MG Revenue</p>
 </footer>
@@ -625,11 +654,18 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
       if (r.top <= y && r.bottom > y) t = z.dataset.tone;
     }
     if (bar.dataset.tone !== t) bar.dataset.tone = t;
+    /* The logo is large over the empty top of the hero, compact once reading starts. */
+    bar.classList.toggle('is-compact', scrollY > 24);
   };
   const queue = () => { if (!queued) { queued = true; requestAnimationFrame(tone); } };
   addEventListener('scroll', queue, { passive: true });
   addEventListener('resize', queue);
+  /* A page restored mid-scroll starts compact without playing the shrink. */
+  const brand = bar.querySelector('.bar__brand');
+  brand.style.transition = 'none';
   tone();
+  brand.getBoundingClientRect();
+  brand.style.transition = '';
 
   /* Section entrances, once. Content is visible without this script. */
   if (root.classList.contains('js')) {
@@ -661,7 +697,11 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
       sheet.classList.add('is-closing');
       setTimeout(done, 180);
     };
-    menuBtn.addEventListener('click', () => { sheet.showModal(); menuBtn.setAttribute('aria-expanded', 'true'); });
+    menuBtn.addEventListener('click', () => {
+      sheet.classList.toggle('is-compact', bar.classList.contains('is-compact'));
+      sheet.showModal();
+      menuBtn.setAttribute('aria-expanded', 'true');
+    });
     sheet.addEventListener('cancel', (e) => { e.preventDefault(); close(); });
     sheet.addEventListener('close', () => { menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.focus({ preventScroll: true }); });
     sheet.querySelector('.sheet__close').addEventListener('click', close);
@@ -669,53 +709,104 @@ figcaption.cap{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
     matchMedia('(min-width: 861px)').addEventListener?.('change', (m) => { if (m.matches && sheet.open) sheet.close(); });
   }
 
-  /* Partner estimator: 10% of what an introduced client pays, for as long as they stay. */
+  /* Partner estimator: 10% of what introduced outsourcing clients pay, for as long as
+     they stay, in US dollars (the owner's figures). The $10,000 line shows the clients
+     adding up, one block per client. */
   const SHARE = 0.10;
-  const CURRENCY = { USD: 'US dollars', EUR: 'euros', GBP: 'pounds sterling' };
-
-  // Your call: should the page project a longer "lifetime" figure, and over what horizon?
-  // Return { amount, caption } to show a fourth ledger row, or null to keep the
-  // page to the monthly and yearly figures. `monthlyShare` is already 10% of the
-  // client's monthly spend; `currencyName` is e.g. "euros".
-  function projectLifetimeShare(monthlyShare, currencyName) {
-    // TODO(owner): decide whether to show a multi-year figure. See the notes in the chat.
-    return null;
-  }
+  const GOAL = 10000;                   // US dollars a month to the partner
+  const CLIENTS = { min: 1, max: 10, start: 5 };
 
   const range = document.getElementById('spend');
-  if (range) {
-    const est = range.closest('.est');
-    const out = document.getElementById('spend-out');
-    const whole = new Intl.NumberFormat('en', { maximumFractionDigits: 0 });
-    const lang = (navigator.language || 'en-US');
-    const guess = /-GB$/i.test(lang) ? 'GBP'
-      : /^(de|fr|it|es|nl|pt|fi|el|sk|sl|et|lv|lt|ga|mt|hr|sq)\b|-(AT|BE|DE|ES|FI|FR|IE|IT|NL|PT|XK)$/i.test(lang) ? 'EUR'
-      : 'USD';
-    const pick = est.querySelector(`input[name=cur][value=${guess}]`);
-    if (pick) pick.checked = true;
+  const est = range && range.closest('.est');
+  if (est) {
+    const chapter = est.closest('section');
+    const $ = (s) => chapter.querySelector(s);
+    const line = $('.tenk__bar');
+    const goalMark = $('.tenk__goal');
+    const steps = [...est.querySelectorAll('[data-step]')];
+    const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+    const goal = money.format(GOAL);
 
-    const update = () => {
-      const cur = est.querySelector('input[name=cur]:checked').value;
+    /* Enough blocks for the most clients the line could need: the goal over the smallest share. */
+    const pool = Math.ceil(GOAL / (Number(range.min) * SHARE));
+    while (line.children.length < pool) line.append(document.createElement('i'));
+    const blocks = [...line.children];
+
+    let clients = CLIENTS.start;
+    let speak;
+    const plural = (n, one, many) => (n === 1 ? one : many);
+
+    const update = (announce) => {
       const spend = Number(range.value);
-      const money = new Intl.NumberFormat('en', { style: 'currency', currency: cur, maximumFractionDigits: 0 });
-      const monthly = spend * SHARE;
-      out.textContent = money.format(spend);
-      range.setAttribute('aria-valuetext', `${money.format(spend)} a month`);
-      est.querySelector('[data-out=monthly]').textContent = whole.format(monthly);
-      est.querySelector('[data-out=yearly]').textContent = whole.format(monthly * 12);
-      est.querySelectorAll('[data-cur-name]').forEach((n) => { n.textContent = CURRENCY[cur]; });
+      const share = Math.round(spend * SHARE);     // to the partner, per client, per month
+      const monthly = share * clients;
+      const need = Math.ceil(GOAL / share);         // clients of this size that reach the line
+      const more = need - clients;
 
-      const row = est.querySelector('[data-row=projection]');
-      const projection = projectLifetimeShare(monthly, CURRENCY[cur]);
-      row.hidden = !projection;
-      if (projection) {
-        row.querySelector('[data-out=projection]').textContent = whole.format(projection.amount);
-        row.querySelector('[data-out=projection-caption]').textContent = projection.caption;
-      }
+      $('#clients-out').textContent = `${clients} outsourcing ${plural(clients, 'client', 'clients')}`;
+      $('[data-out=who]').textContent = plural(clients, 'who spends', 'who each spend');
+      $('#spend-out').textContent = money.format(spend);
+      range.setAttribute('aria-valuetext', `${money.format(spend)} a month`);
+      $('[data-out=clients]').textContent = clients;
+      $('[data-out=monthly]').textContent = money.format(monthly);
+      $('[data-out=yearly]').textContent = money.format(monthly * 12);
+      steps.forEach((b) => {
+        const atEdge = Number(b.dataset.step) < 0 ? clients <= CLIENTS.min : clients >= CLIENTS.max;
+        b.setAttribute('aria-disabled', String(atEdge));
+      });
+
+      /* Below the line the bar is the goal wide; past it the bar is the total wide, so
+         every client stays visible and the marker moves in to where $10,000 falls. */
+      const scale = Math.max(monthly, GOAL);
+      const at = (GOAL / scale) * 100;
+      line.style.setProperty('--w', `${(share / scale) * 100}%`);
+      const shown = Math.max(clients, need);
+      blocks.forEach((b, i) => { b.hidden = i >= shown; b.classList.toggle('is-on', i < clients); });
+      goalMark.style.setProperty('--g', `${at}%`);
+      goalMark.classList.toggle('is-left', at < 50);
+
+      const say = monthly >= GOAL
+        ? `${need} clients of this size reach the line. Each one after that adds ${money.format(share)} a month.`
+        : `${plural(more, 'One more client', `${more} more clients`)} of this size ${plural(more, 'takes', 'take')} you to ${goal} a month.`;
+      $('[data-out=say]').textContent = say;
+      $('[data-out=key]').textContent = `Each block is one client paying you ${money.format(share)} a month.`;
+
+      /* One calm summary for screen readers once the controls settle, never on load. */
+      clearTimeout(speak);
+      if (announce) speak = setTimeout(() => {
+        const reach = monthly >= GOAL
+          ? `${need} clients of this size reach ${goal} a month.`
+          : `${more} more of this size would reach ${goal} a month.`;
+        $('[data-out=live]').textContent = `${clients} outsourcing ${plural(clients, 'client', 'clients')} at ${money.format(spend)} a month ${plural(clients, 'pays', 'pay')} you ${money.format(monthly)} a month, ${money.format(monthly * 12)} a year. ${reach}`;
+      }, 600);
     };
-    range.addEventListener('input', update);
-    est.addEventListener('change', update);
-    update();
+
+    est.querySelector('.stepper').addEventListener('click', (e) => {
+      const b = e.target.closest('[data-step]');
+      if (!b || b.getAttribute('aria-disabled') === 'true') return;
+      clients = Math.min(CLIENTS.max, Math.max(CLIENTS.min, clients + Number(b.dataset.step)));
+      update(true);
+    });
+    range.addEventListener('input', () => update(true));
+    update(false);
+
+    /* The first time the line is seen, the clients add up to it one block at a time. */
+    if (!reduce.matches && 'IntersectionObserver' in window && line.animate) {
+      line.classList.add('is-pending');
+      const seen = new IntersectionObserver(([e]) => {
+        if (!e.isIntersecting) return;
+        seen.disconnect();
+        const on = blocks.filter((b) => !b.hidden && b.classList.contains('is-on'));
+        const rest = blocks.filter((b) => !b.hidden && !b.classList.contains('is-on'));
+        /* Starts once the chapter has faded in; one beat per client so it reads as counting. */
+        on.forEach((b, k) => b.animate([{ transform: 'scaleX(0)' }, { transform: 'none' }],
+          { duration: 640, delay: 380 + k * 150, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' }));
+        rest.forEach((b, k) => b.animate([{ opacity: 0 }, { opacity: 1 }],
+          { duration: 420, delay: 380 + on.length * 150 + k * 14, easing: 'cubic-bezier(.23,1,.32,1)', fill: 'backwards' }));
+        line.classList.remove('is-pending');
+      }, { threshold: 0.8 });
+      seen.observe(line);
+    }
   }
 
   /* Local time in Kosovo, in the close. */
